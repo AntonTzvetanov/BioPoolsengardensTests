@@ -32,6 +32,7 @@ namespace Biopoolsengardens
         }
 
         [Test]
+        [Repeat(2)]
         public void NavigatetoPoolsPage()
         {
             var arrowButton = _driver.FindElement(By.ClassName("shuttle-Widget"));

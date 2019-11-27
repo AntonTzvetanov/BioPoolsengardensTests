@@ -34,6 +34,7 @@ namespace Biopoolsengardens
         }
 
         [Test] 
+        [Repeat(2)]
 
         public void NavigateToZvemvijversPage()
         {
@@ -77,6 +78,7 @@ namespace Biopoolsengardens
 
             }
             _driver.Quit();
+
 
 
         }

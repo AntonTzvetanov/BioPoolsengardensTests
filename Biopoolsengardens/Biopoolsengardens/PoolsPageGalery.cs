@@ -37,6 +37,7 @@ namespace Biopoolsengardens
             }
 
             [Test]
+            [Repeat(2)]
 
             public void NavigateToPoolsGalery()
             {
