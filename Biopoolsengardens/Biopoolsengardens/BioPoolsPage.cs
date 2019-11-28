@@ -1,22 +1,22 @@
+using Biopoolsengardens.BioPoolsPage;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using System;
 using System.IO;
 using System.Reflection;
-using System.Threading;
 
-namespace Biopoolsengardens
+namespace Biopoolsengardens.Pages
 {
 
     [TestFixture]
-    public class TestsPoolsPage
+    public class TestsPoolsPage 
     {
 
         private IWebDriver _driver;
+        private BioPoolsPageMethod _poolsPage;
         private WebDriverWait _wait;
 
 
@@ -24,36 +24,29 @@ namespace Biopoolsengardens
         public void Setup()
         {
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            _driver.Navigate().GoToUrl("https://www.biopoolsengardens.be/nl");
-            _driver.Manage().Window.Maximize();
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
-
+           
+            _poolsPage = new BioPoolsPageMethod(_driver); 
         }
 
         [Test]
-        [Repeat(2)]
+        [Repeat(1)]
         public void NavigatetoPoolsPage()
         {
-            var arrowButton = _driver.FindElement(By.ClassName("shuttle-Widget"));
-            arrowButton.Click();
-            Thread.Sleep(2000);
 
-            var coockieButton = _driver.FindElement(By.ClassName("cookieButton"));
-            coockieButton.Click();
+            _poolsPage.Navigate();
 
-            var example = _wait.Until((d) => d.FindElement(By.XPath("//*[@id='grid_9a94f10022']/div[1]")));
-            example.Click();
+            _poolsPage.ArrowButton.Click();
 
-            var contactButton = _driver.FindElement(By.Id("element-280"));
+            _poolsPage.CoockieButton.Click();
+
+            _poolsPage.Example.Click();
+
+
             Actions actions = new Actions(_driver);
 
-            actions.MoveToElement(contactButton).Perform();
+            actions.MoveToElement(_poolsPage.ContactButton).Perform();
 
-
-            var moveUpArrow = _wait.Until((e) => e.FindElement(By.ClassName("custom-style-33")));
-
-            moveUpArrow.Click();
+            _poolsPage.MoveUpArrow.Click();
 
         }
 
@@ -64,7 +57,7 @@ namespace Biopoolsengardens
             var name = TestContext.CurrentContext.Test.Name;
             var result = TestContext.CurrentContext.Result.Outcome;
 
-            if (result == ResultState.Success)
+            if (result != ResultState.Success)
             {
                 var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
                 var directory = Directory.GetCurrentDirectory();
