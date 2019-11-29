@@ -36,7 +36,7 @@ namespace Biopoolsengardens
 
 
             [Test]
-            [Retry(2)]
+            [Repeat(2)]
 
             public void NavigateGalery()
             {

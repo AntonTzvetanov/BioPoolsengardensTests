@@ -58,7 +58,7 @@ namespace Biopoolsengardens
                 email.SendKeys("test@domain.com");
                 var commentBox = _driver.FindElement(By.Id("fields[557]"));
                 commentBox.SendKeys("test");
-                var subbmitButton = _driver.FindElement(By.XPath("//*[@id='grid_48191dcd95']/div[2]/div/div[2]/div/form/div[5]/div/div/button"));
+                var subbmitButton = _driver.FindElement(By.ClassName("Row"));
                 subbmitButton.Click();
 
             }

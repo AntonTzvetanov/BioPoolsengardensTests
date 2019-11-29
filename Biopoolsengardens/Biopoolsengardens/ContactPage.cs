@@ -2,6 +2,7 @@
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.IO;
@@ -9,18 +10,19 @@ using System.Reflection;
 
 namespace Biopoolsengardens
 {
-    class GratisOffer
+    class ContactPage
     {
+        [TestFixture]
 
-        [TestFixture] 
 
-        public class FreeOffer
+
+        public class Contact
         {
 
             private IWebDriver _driver;
             private WebDriverWait _wait;
 
-            [SetUp] 
+            [SetUp]
 
             public void SetUp()
             {
@@ -30,32 +32,31 @@ namespace Biopoolsengardens
                 _driver.Manage().Window.Maximize();
                 _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
 
-            }
 
+            }
 
             [Test]
             [Repeat(2)]
 
-            public void TestFreeOffer()
+            public void NavigateToContactPageAndFillTheForm()
             {
+
                 var coockieButton = _driver.FindElement(By.ClassName("cookieButton"));
                 coockieButton.Click();
 
-                var shuttelButton = _driver.FindElement(By.Id("element-883"));
-                shuttelButton.Click();
+                var contactPageButton = _driver.FindElement(By.LinkText("Contact"));
+                contactPageButton.Click();
 
-                var fillFirstAndLastName = _driver.FindElement(By.Id("fields[911]"));
-                fillFirstAndLastName.SendKeys("Anton Tsvetanov");
-                var telephoneNumber = _driver.FindElement(By.Id("fields[912]"));
-                telephoneNumber.SendKeys("003345959123");
-                var emailAddress = _driver.FindElement(By.Id("fields[913]"));
-                emailAddress.SendKeys("test@domain.com");
-                var ongoveer = _driver.FindElement(By.Id("fields[917]"));
-                ongoveer.SendKeys("test");
-                var interestButton = _driver.FindElement(By.Name("fields[916][]"));
-                interestButton.Click();
-                var textBox = _driver.FindElement(By.Id("fields[914]"));
-                textBox.SendKeys("test");
+                var shuttleElement = _driver.FindElement(By.Id("grid_2f3d0e64e9"));
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(shuttleElement).Perform();
+
+                var contactField = _driver.FindElement(By.Id("fields[538]"));
+                contactField.SendKeys("Test Testov");
+                var telephoneNumber = _driver.FindElement(By.Id("fields[541]"));
+                telephoneNumber.SendKeys("000123456543");
+                var email = _driver.FindElement(By.Id("fields[539]"));
+                email.SendKeys("test@domain.com");
                 var subbmitButton = _driver.FindElement(By.TagName("Versturen"));
                 subbmitButton.Click();
 
@@ -79,8 +80,8 @@ namespace Biopoolsengardens
                 }
                 _driver.Quit();
 
-
             }
+
         }
 
     }
