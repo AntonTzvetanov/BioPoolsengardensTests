@@ -1,4 +1,6 @@
 ﻿using Biopoolsengardens.BioPoolsPage;
+using Biopoolsengardens.Pages;
+using Microsoft.Azure.KeyVault.Models;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
@@ -8,7 +10,7 @@ using OpenQA.Selenium.Support.UI;
 using System.IO;
 using System.Reflection;
 
-namespace Biopoolsengardens
+namespace Biopoolsengardens.Pages
 {
     class ContactPage
     {
@@ -20,15 +22,19 @@ namespace Biopoolsengardens
         {
 
             private IWebDriver _driver;
+            private ContactPageFactory _user;
+
             private WebDriverWait _wait;
             private ContactePageMethod _contactPage;
 
             [SetUp]
 
-            public void SetUp()
+            public void TestInit()
             {
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-               
+
+                _user = ContactPageFill.FillUser();
+
             }
 
             [Test]
@@ -46,15 +52,9 @@ namespace Biopoolsengardens
                 _contactPage.ContactPageButton.Click();
 
                 Actions action = new Actions(_driver);
-                action.ClickAndHold(_contactPage.ShuttleElement).Perform();
+                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
 
-                _contactPage.ContactField.SendKeys("test");
-
-                _contactPage.Telephone.SendKeys("869675465");
-
-                _contactPage.Email.SendKeys("test@domain.com");
-
-                _contactPage.TextArea.SendKeys("test");
+                _contactPage.FillForm(_user);
 
                // _contactPage.Submit.Click();
 

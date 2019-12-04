@@ -1,21 +1,19 @@
-﻿using Biopoolsengardens.Pages;
-using Biopoolsengardens;
-using System.Text;
+﻿using Biopoolsengardens.BioPoolsPage;
 
 namespace Biopoolsengardens.Pages
 {
-    public partial class FillContactPage
+    public partial class ContactePageMethod
     {
 
 
         public void FillForm(ContactPageFactory contacts)
         {
 
-            //ContactField.SendKeys(contacts.Name);
+            ContactField.SendKeys(contacts.Name);
 
-           // Telephone.SendKeys(contacts.RealTelepfoneNumber);
+            Telephone.SendKeys(contacts.RealTelepfoneNumber);
 
-           // Email.SendKeys(contacts.RealEmailAddress);
+            Email.SendKeys(contacts.RealEmailAddress);
 
         }
 

@@ -1,4 +1,4 @@
-﻿namespace Biopoolsengardens
+﻿namespace Biopoolsengardens.Pages
 {
    public  class ContactPageFactory
     {

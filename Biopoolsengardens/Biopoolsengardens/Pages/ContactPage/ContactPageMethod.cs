@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 
-namespace Biopoolsengardens.BioPoolsPage
+namespace Biopoolsengardens.Pages
 {
    public partial class ContactePageMethod : BasePage
     {

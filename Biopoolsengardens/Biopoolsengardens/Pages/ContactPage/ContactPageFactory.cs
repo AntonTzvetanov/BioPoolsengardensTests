@@ -1,9 +1,9 @@
-﻿namespace Biopoolsengardens
+﻿namespace Biopoolsengardens.Pages
 {
     public  class ContactPageFill
     {
 
-        public static ContactPageFactory Fill()
+        public static ContactPageFactory FillUser()
         {
             return new ContactPageFactory
             {
