@@ -1,12 +1,9 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Biopoolsengardens.Pages.GratisOfferPage
+namespace Biopoolsengardens.Pages
 {
-    class GratisOfferMethod : BasePage
+    public partial  class GratisOfferMethod : BasePage
     {
 
         public GratisOfferMethod(IWebDriver driver)
@@ -33,7 +30,7 @@ namespace Biopoolsengardens.Pages.GratisOfferPage
 
         public IWebElement ShuttleButton => Driver.FindElement(By.Id("element-883"));
 
-        public IWebElement FirstAndLastName => Driver.FindElement(By.Id("fields[911]"));
+        public IWebElement Names => Driver.FindElement(By.Id("fields[911]"));
 
         public IWebElement TelephoneNumber => Driver.FindElement(By.Id("fields[912]"));
 

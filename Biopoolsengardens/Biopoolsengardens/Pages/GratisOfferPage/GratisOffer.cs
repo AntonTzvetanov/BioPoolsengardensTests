@@ -1,5 +1,4 @@
-﻿using Biopoolsengardens.Pages.GratisOfferPage;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -7,9 +6,9 @@ using OpenQA.Selenium.Support.UI;
 using System.IO;
 using System.Reflection;
 
-namespace Biopoolsengardens
+namespace Biopoolsengardens.Pages
 {
-    class GratisOffer
+    class GratisOfferTest
     {
 
         [TestFixture] 
@@ -18,8 +17,11 @@ namespace Biopoolsengardens
         {
 
             private IWebDriver _driver;
-            private WebDriverWait _wait;
+            
             private GratisOfferMethod _offer;
+            private OffersProperties _fillOffer;
+
+
 
             [SetUp] 
 
@@ -28,7 +30,9 @@ namespace Biopoolsengardens
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 
                 _driver.Manage().Window.Maximize();
-          
+
+                _fillOffer = GratisOffer.FillUser();
+
             }
             
 
@@ -46,19 +50,12 @@ namespace Biopoolsengardens
 
                 _offer.ShuttleButton.Click();
 
-                _offer.FirstAndLastName.SendKeys("test test");
 
-                _offer.TelephoneNumber.SendKeys("0092143546543");
-
-                _offer.EmailAddress.SendKeys("test@domain.com");
-
-                _offer.Ongoveer.SendKeys("test");
+                _offer.FillOfferForm(_fillOffer);
 
                 _offer.InterestButton.Click();
 
-                _offer.TextBox.SendKeys("test");
-
-                //_offer.SubbmitButton.Click();
+                _offer.SubbmitButton.Click();
                
             }
 
@@ -74,20 +71,13 @@ namespace Biopoolsengardens
 
                 _offer.ShuttleButton.Click();
 
-                _offer.FirstAndLastName.SendKeys("");
-
-                _offer.TelephoneNumber.SendKeys("0092143546543");
-
-                _offer.EmailAddress.SendKeys("test@domain.com");
-
-                _offer.Ongoveer.SendKeys("test");
-
                 _offer.InterestButton.Click();
 
-                _offer.TextBox.SendKeys("test");
+                _fillOffer.FirstAndLastName = "";
 
-               // _offer.SubbmitButton.Click();
+                _offer.FillOfferForm(_fillOffer);
 
+                // _offer.SubbmitButton.Click();
 
             }
 
@@ -105,20 +95,13 @@ namespace Biopoolsengardens
 
                 _offer.ShuttleButton.Click();
 
-                _offer.FirstAndLastName.SendKeys("test test");
-
-                _offer.TelephoneNumber.SendKeys("");
-
-                _offer.EmailAddress.SendKeys("test@domain.com");
-
-                _offer.Ongoveer.SendKeys("test");
-
                 _offer.InterestButton.Click();
 
-                _offer.TextBox.SendKeys("test");
+                _fillOffer.TelephoneNumber = "";
 
-               // _offer.SubbmitButton.Click();
+                _offer.FillOfferForm(_fillOffer);
 
+                // _offer.SubbmitButton.Click();
 
             }
 
@@ -126,7 +109,6 @@ namespace Biopoolsengardens
 
             public void TestWithoutEmailAddress()
             {
-
 
                 _offer = new GratisOfferMethod(_driver);
 
@@ -136,19 +118,13 @@ namespace Biopoolsengardens
 
                 _offer.ShuttleButton.Click();
 
-                _offer.FirstAndLastName.SendKeys("test test");
-
-                _offer.TelephoneNumber.SendKeys("0092143546543");
-
-                _offer.EmailAddress.SendKeys("");
-
-                _offer.Ongoveer.SendKeys("test");
-
                 _offer.InterestButton.Click();
 
-                _offer.TextBox.SendKeys("test");
+                _fillOffer.EmailAddress = "";
 
-               // _offer.SubbmitButton.Click();
+                _offer.FillOfferForm(_fillOffer);
+
+                // _offer.SubbmitButton.Click();
 
             }
 
@@ -169,7 +145,6 @@ namespace Biopoolsengardens
 
                 }
                 _driver.Quit();
-
 
             }
         }

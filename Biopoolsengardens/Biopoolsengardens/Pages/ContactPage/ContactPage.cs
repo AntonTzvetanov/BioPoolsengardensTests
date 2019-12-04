@@ -1,7 +1,4 @@
-﻿using Biopoolsengardens.BioPoolsPage;
-using Biopoolsengardens.Pages;
-using Microsoft.Azure.KeyVault.Models;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -35,6 +32,8 @@ namespace Biopoolsengardens.Pages
 
                 _user = ContactPageFill.FillUser();
 
+                _driver.Manage().Window.Maximize();
+
             }
 
             [Test]
@@ -56,7 +55,7 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.FillForm(_user);
 
-                _contactPage.Submit.Click();
+               // _contactPage.Submit.Click();
 
             }
 
@@ -78,7 +77,6 @@ namespace Biopoolsengardens.Pages
                 _user.RealEmailAddress = "";
 
                 _contactPage.FillForm(_user);
-
 
             }
 
