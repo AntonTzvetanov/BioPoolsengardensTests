@@ -42,7 +42,7 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateToContactPageAndFillTheForm()
             {
-               
+
                 _contactPage = new ContactePageMethod(_driver);
 
                 _contactPage.Navigate();
@@ -52,11 +52,75 @@ namespace Biopoolsengardens.Pages
                 _contactPage.ContactPageButton.Click();
 
                 Actions action = new Actions(_driver);
-                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
+                action.ClickAndHold(_contactPage.ShuttleElement).Perform();
 
                 _contactPage.FillForm(_user);
 
-               // _contactPage.Submit.Click();
+                _contactPage.Submit.Click();
+
+            }
+
+            [Test]
+
+            public void FillFormWithoutEmailAddress()
+            {
+
+
+                _contactPage.Navigate();
+
+                _contactPage.CookieButton.Click();
+
+                _contactPage.ContactPageButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(_contactPage.ShuttleElement).Perform();
+
+                _user.RealEmailAddress = "";
+
+                _contactPage.FillForm(_user);
+
+
+            }
+
+
+
+            [Test]
+
+            public void FillFormWithoutPhoneNumber()
+            {
+
+                _contactPage.Navigate();
+
+                _contactPage.CookieButton.Click();
+
+                _contactPage.ContactPageButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(_contactPage.ShuttleElement).Perform();
+
+                _user.RealTelepfoneNumber = "";
+
+                _contactPage.FillForm(_user);
+
+            }
+
+            [Test] 
+
+            public void FillFormWithoutFirstAndLastName()
+            {
+
+                _contactPage.Navigate();
+
+                _contactPage.CookieButton.Click();
+
+                _contactPage.ContactPageButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(_contactPage.ShuttleElement).Perform();
+
+                _user.Name = "";
+
+                _contactPage.FillForm(_user);
 
             }
 

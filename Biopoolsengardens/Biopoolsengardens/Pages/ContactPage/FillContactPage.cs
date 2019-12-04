@@ -1,6 +1,4 @@
-﻿using Biopoolsengardens.BioPoolsPage;
-
-namespace Biopoolsengardens.Pages
+﻿namespace Biopoolsengardens.Pages
 {
     public partial class ContactePageMethod
     {
@@ -15,9 +13,9 @@ namespace Biopoolsengardens.Pages
 
             Email.SendKeys(contacts.RealEmailAddress);
 
+            TextArea.SendKeys(contacts.CommentBox);
+
         }
-
-
 
     }
 }
