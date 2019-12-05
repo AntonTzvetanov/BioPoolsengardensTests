@@ -58,6 +58,132 @@ namespace Biopoolsengardens.Pages
 
             }
 
+            [Test]
+
+            public void NavigateAndMakeAppointmentWithoutFirstName()
+            {
+                _apointment = new MakeApointmentMethod(_driver);
+
+                _apointment.Navigate();
+
+                _apointment.CookieButton.Click();
+
+                _apointment.OfferButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(_apointment.ShuttleElement).Perform();
+
+                _apointment.FillApointment(_makeApointment);
+
+                _makeApointment.UserName = "";
+
+                _apointment.Options.Click();
+
+                // _apointment.Subbmit.Click();
+
+            }
+
+            [Test]
+
+            public void NavigateAndMakeAppointmentWithoutLastName()
+            {
+                _apointment = new MakeApointmentMethod(_driver);
+
+                _apointment.Navigate();
+
+                _apointment.CookieButton.Click();
+
+                _apointment.OfferButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(_apointment.ShuttleElement).Perform();
+
+                _apointment.FillApointment(_makeApointment);
+
+                _makeApointment.UserFamilyName = "";
+
+                _apointment.Options.Click();
+
+                // _apointment.Subbmit.Click();
+
+            }
+
+            [Test]
+
+            public void NavigateAndMakeAppointmentWithoutPhoneNumber()
+            {
+
+                _apointment = new MakeApointmentMethod(_driver);
+
+                _apointment.Navigate();
+
+                _apointment.CookieButton.Click();
+
+                _apointment.OfferButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(_apointment.ShuttleElement).Perform();
+
+                _apointment.FillApointment(_makeApointment);
+
+                _makeApointment.UserPhoneNumber = "";
+
+                _apointment.Options.Click();
+
+                // _apointment.Subbmit.Click();
+
+            }
+
+            [Test]
+
+            public void NavigateAndMakeAppointmentWithoutEmailAddress()
+            {
+                _apointment = new MakeApointmentMethod(_driver);
+
+                _apointment.Navigate();
+
+                _apointment.CookieButton.Click();
+
+                _apointment.OfferButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(_apointment.ShuttleElement).Perform();
+
+                _apointment.FillApointment(_makeApointment);
+
+                _makeApointment.UserEmailAddress = "";
+
+                _apointment.Options.Click();
+
+                // _apointment.Subbmit.Click();
+
+            }
+
+            [Test]
+
+            public void NavigateAndMakeAppointmentWithoutFillingTheCommentBox()
+            {
+                _apointment = new MakeApointmentMethod(_driver);
+
+                _apointment.Navigate();
+
+                _apointment.CookieButton.Click();
+
+                _apointment.OfferButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.ClickAndHold(_apointment.ShuttleElement).Perform();
+
+                _apointment.FillApointment(_makeApointment);
+
+                _makeApointment.CommenentBox = "";
+
+                _apointment.Options.Click();
+
+                // _apointment.Subbmit.Click();
+
+            }
+
             [TearDown]
             public void TearDown()
             {
