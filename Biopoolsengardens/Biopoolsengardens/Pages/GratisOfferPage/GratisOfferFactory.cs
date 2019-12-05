@@ -1,10 +1,10 @@
 ﻿namespace Biopoolsengardens.Pages
 {
-    public  class GratisOffer
+    public partial class GratisOffer
     {
 
 
-        public static OffersProperties FillUser()
+        public  static OffersProperties FillUser()
         {
             return new OffersProperties
             {

@@ -2,7 +2,6 @@
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using System.IO;
 using System.Reflection;
 
@@ -21,8 +20,6 @@ namespace Biopoolsengardens.Pages
             private GratisOfferMethod _offer;
             private OffersProperties _fillOffer;
 
-
-
             [SetUp] 
 
             public void SetUp()
@@ -37,7 +34,7 @@ namespace Biopoolsengardens.Pages
             
 
             [Test]
-            [Retry(2)]
+            [Retry(1)]
 
             public void SendRequestForFreeOffer()
             {
@@ -50,7 +47,6 @@ namespace Biopoolsengardens.Pages
 
                 _offer.ShuttleButton.Click();
 
-
                 _offer.FillOfferForm(_fillOffer);
 
                 _offer.InterestButton.Click();
@@ -60,6 +56,7 @@ namespace Biopoolsengardens.Pages
             }
 
             [Test]
+            [Retry(1)]
 
             public void TestFreeOfferWithoutFirstAndLastName()
             {
@@ -83,6 +80,7 @@ namespace Biopoolsengardens.Pages
 
 
             [Test]
+            [Retry(1)]
 
             public void TestWithoutTelephoneNumber()
             {
@@ -106,6 +104,7 @@ namespace Biopoolsengardens.Pages
             }
 
             [Test]
+            [Retry(1)]
 
             public void TestWithoutEmailAddress()
             {

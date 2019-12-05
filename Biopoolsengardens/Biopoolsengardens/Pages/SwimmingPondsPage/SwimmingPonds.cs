@@ -5,7 +5,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using System;
 using System.IO;
 using System.Reflection;
 using System.Threading;
@@ -25,13 +24,10 @@ namespace Biopoolsengardens
 
         public void TestInit()
         {
-
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            _driver.Navigate().GoToUrl("https://www.biopoolsengardens.be/nl");
+            
             _driver.Manage().Window.Maximize();
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
-
+          
         }
 
         [Test] 
@@ -47,9 +43,6 @@ namespace Biopoolsengardens
 
             _swimmingPonds.Example.Click();
            
-          
-            
-            
             Actions action = new Actions(_driver);
             action.ClickAndHold(_swimmingPonds.Grid).Perform();
             action.Release(_swimmingPonds.Grid).Perform();
@@ -58,7 +51,6 @@ namespace Biopoolsengardens
 
             _swimmingPonds.MoveUpArrowButton.Click();
             
-
         }
 
 
@@ -81,7 +73,6 @@ namespace Biopoolsengardens
             _driver.Quit();
 
         }
-
 
     }
    

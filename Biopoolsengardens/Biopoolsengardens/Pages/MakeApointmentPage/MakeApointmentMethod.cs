@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 
-namespace Biopoolsengardens.Pages.MakeApointment
+namespace Biopoolsengardens.Pages
 {
-    class MakeApointmentMethod : BasePage
+   public partial class MakeApointmentMethod : BasePage
     {
         public MakeApointmentMethod(IWebDriver driver)
             : base(driver)
@@ -36,7 +36,7 @@ namespace Biopoolsengardens.Pages.MakeApointment
 
         public IWebElement Family => Driver.FindElement(By.Id("fields[562]"));
 
-        public IWebElement Telephone => Driver.FindElement(By.Id("fields[562]"));
+        public IWebElement Telephone => Driver.FindElement(By.Id("fields[555]"));
 
         public IWebElement Options => Driver.FindElement(By.ClassName("Field-checkbox"));
 
