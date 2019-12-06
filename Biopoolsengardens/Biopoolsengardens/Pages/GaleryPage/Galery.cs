@@ -32,7 +32,7 @@ namespace Biopoolsengardens
 
 
             [Test]
-            [Retry(2)]
+            [Retry(1)]
 
             public void NavigateGalery()
             {
@@ -47,7 +47,7 @@ namespace Biopoolsengardens
                 Actions actions = new Actions(_driver);
                 actions.ClickAndHold(_galery.Pictures).Release().Perform();
 
-                for (int i = 0; i <= 15; i++)
+                for (int i = 0; i <= 20; i++)
                 {
                     _galery.NextPictureButton.Click();
 
@@ -75,7 +75,6 @@ namespace Biopoolsengardens
 
                 }
                 _driver.Quit();
-
 
             }
 

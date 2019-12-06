@@ -21,7 +21,6 @@ namespace Biopoolsengardens.Pages
             private IWebDriver _driver;
             private ContactPageFactory _user;
 
-            private WebDriverWait _wait;
             private ContactePageMethod _contactPage;
 
             [SetUp]
@@ -57,7 +56,7 @@ namespace Biopoolsengardens.Pages
 
                // _contactPage.Submit.Click();
 
-            }
+             }
 
             [Test]
 
@@ -77,6 +76,8 @@ namespace Biopoolsengardens.Pages
                 _user.RealEmailAddress = "";
 
                 _contactPage.FillForm(_user);
+
+                _contactPage.Submit.Click();
 
             }
 
@@ -100,6 +101,8 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.FillForm(_user);
 
+                _contactPage.Submit.Click();
+
             }
 
             [Test] 
@@ -119,6 +122,8 @@ namespace Biopoolsengardens.Pages
                 _user.Name = "";
 
                 _contactPage.FillForm(_user);
+
+                _contactPage.Submit.Click();
 
             }
 

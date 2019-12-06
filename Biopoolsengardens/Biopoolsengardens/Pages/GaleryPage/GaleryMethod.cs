@@ -1,11 +1,8 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Biopoolsengardens.Pages.Galery
 {
-   public partial class GaleryMethod : BasePage
+    public partial class GaleryMethod : BasePage
     {
 
         public GaleryMethod(IWebDriver driver)
