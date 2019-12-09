@@ -47,6 +47,9 @@ namespace Biopoolsengardens.Pages
 
             _poolsPage.MoveUpArrowButton.Click();
 
+            _poolsPage.AssertHref("VRAAG EEN GRATIS OFFERTE!");
+            
+
         }
 
         

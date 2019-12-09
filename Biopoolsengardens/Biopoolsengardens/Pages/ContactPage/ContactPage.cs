@@ -3,7 +3,6 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using System.IO;
 using System.Reflection;
 
@@ -62,8 +61,6 @@ namespace Biopoolsengardens.Pages
 
             public void FillFormWithoutEmailAddress()
             {
-
-
                 _contactPage.Navigate();
 
                 _contactPage.CookieButton.Click();
@@ -78,7 +75,6 @@ namespace Biopoolsengardens.Pages
                 _contactPage.FillForm(_user);
 
                 _contactPage.Submit.Click();
-
             }
 
 
@@ -87,7 +83,6 @@ namespace Biopoolsengardens.Pages
 
             public void FillFormWithoutPhoneNumber()
             {
-
                 _contactPage.Navigate();
 
                 _contactPage.CookieButton.Click();
@@ -109,7 +104,6 @@ namespace Biopoolsengardens.Pages
 
             public void FillFormWithoutFirstAndLastName()
             {
-
                 _contactPage.Navigate();
 
                 _contactPage.CookieButton.Click();

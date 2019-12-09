@@ -26,7 +26,7 @@ namespace Biopoolsengardens.BioPoolsPage
         public void AssertHref(string expected)
         {
 
-            Assert.AreEqual(expected,AssertLink.Text);
+            Assert.AreEqual(expected, AssertLink.Text);
 
         }
 
@@ -36,7 +36,7 @@ namespace Biopoolsengardens.BioPoolsPage
 
         public IWebElement ContactButton => Driver.FindElement(By.Id("element-280"));
 
-        public IWebElement AssertLink => Driver.FindElement(By.XPath("//*[@id='element - 694']/h2"));
+        public IWebElement AssertLink => Driver.FindElement(By.Id("element-883"));
 
 
     }
