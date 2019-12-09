@@ -18,7 +18,6 @@ namespace Biopoolsengardens.Pages
         private BioPoolsPageMethod _poolsPage;
         
 
-
         [SetUp]
         public void Setup()
         {
@@ -34,6 +33,8 @@ namespace Biopoolsengardens.Pages
 
             _poolsPage.Navigate();
 
+            _poolsPage.Maximize();
+
             _poolsPage.ArrowButton.Click();
 
             _poolsPage.CookieButton.Click();
@@ -47,13 +48,19 @@ namespace Biopoolsengardens.Pages
 
             _poolsPage.MoveUpArrowButton.Click();
 
-            _poolsPage.AssertHref("VRAAG EEN GRATIS OFFERTE!");
+            _poolsPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
+            _poolsPage.MakeApointmentAssert("Maak een afspraak");
+            _poolsPage.BioPoolsAssertLink("Biozwembaden");
+            _poolsPage.SwimmingPondsAssertLink("Zwemvijvers");
+            _poolsPage.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
+            _poolsPage.SwimmingPoolsLink("Zwembaden");
+            _poolsPage.RealizationLink("Realisaties");
+            _poolsPage.ContactLink("Contact");
             
-
         }
 
-        
-            [TearDown]
+
+        [TearDown]
         public void TearDown()
         {
             var name = TestContext.CurrentContext.Test.Name;

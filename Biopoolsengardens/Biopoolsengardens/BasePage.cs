@@ -15,6 +15,14 @@ namespace Biopoolsengardens
             _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(2));
         }
 
+        public void Maximize()
+        {
+
+            Driver.Manage().Window.Maximize();
+
+        }
+
+
         public IWebDriver Driver => _driver;
 
         public WebDriverWait Wait => _wait;
