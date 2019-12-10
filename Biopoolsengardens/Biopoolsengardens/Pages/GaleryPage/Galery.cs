@@ -27,6 +27,8 @@ namespace Biopoolsengardens
             {
 
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
+                _driver.Manage().Window.Maximize();
                
             }
 
@@ -47,7 +49,7 @@ namespace Biopoolsengardens
                 Actions actions = new Actions(_driver);
                 actions.ClickAndHold(_galery.Pictures).Release().Perform();
 
-                for (int i = 0; i <= 20; i++)
+                for (int i = 0; i <= 28; i++)
                 {
                     _galery.NextPictureButton.Click();
 

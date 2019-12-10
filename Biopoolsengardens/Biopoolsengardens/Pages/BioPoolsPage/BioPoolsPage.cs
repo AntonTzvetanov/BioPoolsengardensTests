@@ -24,6 +24,8 @@ namespace Biopoolsengardens.Pages
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
            
             _poolsPage = new BioPoolsPageMethod(_driver); 
+
+            _driver.Manage().Window.Maximize();
         }
 
         [Test]
@@ -56,7 +58,7 @@ namespace Biopoolsengardens.Pages
             _poolsPage.SwimmingPoolsLink("Zwembaden");
             _poolsPage.RealizationLink("Realisaties");
             _poolsPage.ContactLink("Contact");
-            
+
         }
 
 
