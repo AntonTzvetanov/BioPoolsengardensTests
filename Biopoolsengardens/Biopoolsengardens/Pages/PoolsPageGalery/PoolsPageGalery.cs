@@ -19,7 +19,7 @@ namespace Biopoolsengardens
         {
 
             private IWebDriver _driver;
-            private WebDriverWait _wait;
+           
             private PoolsPageGaleryMethod _poolsGalery;
 
             [SetUp]
@@ -28,8 +28,6 @@ namespace Biopoolsengardens
             {
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 
-                _driver.Manage().Window.Maximize();
-             
             }
 
             [Test]
@@ -39,6 +37,8 @@ namespace Biopoolsengardens
             {
 
                 _poolsGalery = new PoolsPageGaleryMethod(_driver); 
+
+                _poolsGalery.Maximize();
 
                 _poolsGalery.Navigate();
 
