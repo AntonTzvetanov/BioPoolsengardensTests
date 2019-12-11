@@ -68,6 +68,16 @@ namespace Biopoolsengardens
 
                 _poolsGalery.MoveUpArrowButton.Click();
 
+
+                _poolsGalery.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
+                _poolsGalery.MakeApointmentAssert("Maak een afspraak");
+                _poolsGalery.BioPoolsAssertLink("Biozwembaden");
+                _poolsGalery.SwimmingPondsAssertLink("Zwemvijvers");
+                _poolsGalery.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
+                _poolsGalery.SwimmingPoolsLink("Zwembaden");
+                _poolsGalery.RealizationLink("Realisaties");
+                _poolsGalery.ContactLink("Contact");
+
             }
 
 

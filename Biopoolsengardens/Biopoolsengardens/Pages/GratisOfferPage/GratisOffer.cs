@@ -52,7 +52,17 @@ namespace Biopoolsengardens.Pages
                 _offer.InterestButton.Click();
 
                 _offer.SubbmitButton.Click();
-               
+
+                _offer.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
+                _offer.MakeApointmentAssert("Maak een afspraak");
+                _offer.BioPoolsAssertLink("Biozwembaden");
+                _offer.SwimmingPondsAssertLink("Zwemvijvers");
+                _offer.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
+                _offer.SwimmingPoolsLink("Zwembaden");
+                _offer.RealizationLink("Realisaties");
+                _offer.ContactLink("Contact");
+
+
             }
 
             [Test]
@@ -75,6 +85,16 @@ namespace Biopoolsengardens.Pages
                 _offer.FillOfferForm(_fillOffer);
 
                 // _offer.SubbmitButton.Click();
+
+                _offer.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
+                _offer.MakeApointmentAssert("Maak een afspraak");
+                _offer.BioPoolsAssertLink("Biozwembaden");
+                _offer.SwimmingPondsAssertLink("Zwemvijvers");
+                _offer.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
+                _offer.SwimmingPoolsLink("Zwembaden");
+                _offer.RealizationLink("Realisaties");
+                _offer.ContactLink("Contact");
+
 
             }
 
@@ -101,6 +121,16 @@ namespace Biopoolsengardens.Pages
 
                 // _offer.SubbmitButton.Click();
 
+                _offer.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
+                _offer.MakeApointmentAssert("Maak een afspraak");
+                _offer.BioPoolsAssertLink("Biozwembaden");
+                _offer.SwimmingPondsAssertLink("Zwemvijvers");
+                _offer.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
+                _offer.SwimmingPoolsLink("Zwembaden");
+                _offer.RealizationLink("Realisaties");
+                _offer.ContactLink("Contact");
+
+
             }
 
             [Test]
@@ -124,6 +154,16 @@ namespace Biopoolsengardens.Pages
                 _offer.FillOfferForm(_fillOffer);
 
                 // _offer.SubbmitButton.Click();
+
+                _offer.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
+                _offer.MakeApointmentAssert("Maak een afspraak");
+                _offer.BioPoolsAssertLink("Biozwembaden");
+                _offer.SwimmingPondsAssertLink("Zwemvijvers");
+                _offer.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
+                _offer.SwimmingPoolsLink("Zwembaden");
+                _offer.RealizationLink("Realisaties");
+                _offer.ContactLink("Contact");
+
 
             }
 
