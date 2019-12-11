@@ -24,10 +24,19 @@ namespace Biopoolsengardens
 
         public void TestInit()
         {
-            _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            
-            _driver.Manage().Window.Maximize();
           
+
+           //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+           // _driver.Manage().Window.Maximize();
+
+
+             ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+
+             options.AddArgument("--headless");
+
+
+             _driver = new ChromeDriver(options);
+
         }
 
         [Test] 
@@ -78,6 +87,7 @@ namespace Biopoolsengardens
                 var fullPath = Path.GetFullPath("..\\..\\..\\Screenshots");
 
                 screenshot.SaveAsFile(fullPath + name + ".png", ScreenshotImageFormat.Png);
+
 
             }
             _driver.Quit();
