@@ -12,8 +12,6 @@ namespace Biopoolsengardens.Pages
     {
         [TestFixture]
 
-
-
         public class Contact
         {
 
@@ -34,14 +32,10 @@ namespace Biopoolsengardens.Pages
 
                 options.AddArgument("--headless");
 
-
                 _driver = new ChromeDriver(options);
 
-
                 _user = ContactPageFill.FillUser();
-
-                _driver.Manage().Window.Maximize();
-
+                _contactPage = new ContactePageMethod(_driver);
             }
 
             [Test]
@@ -49,8 +43,6 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateToContactPageAndFillTheForm()
             {
-
-                _contactPage = new ContactePageMethod(_driver);
 
                 _contactPage.Navigate();
 
@@ -81,6 +73,7 @@ namespace Biopoolsengardens.Pages
 
             public void FillFormWithoutEmailAddress()
             {
+
                 _contactPage.Navigate();
 
                 _contactPage.CookieButton.Click();
@@ -113,6 +106,7 @@ namespace Biopoolsengardens.Pages
 
             public void FillFormWithoutPhoneNumber()
             {
+                
                 _contactPage.Navigate();
 
                 _contactPage.CookieButton.Click();
