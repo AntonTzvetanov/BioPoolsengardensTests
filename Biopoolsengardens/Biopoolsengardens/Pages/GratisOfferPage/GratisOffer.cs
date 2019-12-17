@@ -40,6 +40,8 @@ namespace Biopoolsengardens.Pages
 
                 _fillOffer = GratisOffer.FillUser();
 
+                _offer = new GratisOfferMethod(_driver);
+
             }
             
 
@@ -48,8 +50,6 @@ namespace Biopoolsengardens.Pages
 
             public void SendRequestForFreeOffer()
             {
-
-                _offer = new GratisOfferMethod(_driver);
 
                 _offer.Navigate();
 
@@ -80,8 +80,6 @@ namespace Biopoolsengardens.Pages
 
             public void TestFreeOfferWithoutFirstAndLastName()
             {
-                _offer = new GratisOfferMethod(_driver);
-
                 _offer.Navigate();
 
                 _offer.CookieButton.Click();
@@ -115,8 +113,6 @@ namespace Biopoolsengardens.Pages
             public void TestWithoutTelephoneNumber()
             {
 
-                _offer = new GratisOfferMethod(_driver);
-
                 _offer.Navigate();
 
                 _offer.CookieButton.Click();
@@ -148,8 +144,6 @@ namespace Biopoolsengardens.Pages
 
             public void TestWithoutEmailAddress()
             {
-
-                _offer = new GratisOfferMethod(_driver);
 
                 _offer.Navigate();
 

@@ -40,6 +40,7 @@ namespace Biopoolsengardens.Pages
                 
                 _makeApointment = MakeAppointmentUserFactory.User();
 
+                _apointment = new MakeApointmentMethod(_driver);
             }
 
 
@@ -48,8 +49,7 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateAndMakeAppointment()
             {
-                _apointment = new MakeApointmentMethod(_driver);
-
+                
                 _apointment.Navigate();
 
                 _apointment.CookieButton.Click();
@@ -81,8 +81,6 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateAndMakeAppointmentWithoutFirstName()
             {
-                _apointment = new MakeApointmentMethod(_driver);
-
                 _apointment.Navigate();
 
                 _apointment.CookieButton.Click();
@@ -110,15 +108,12 @@ namespace Biopoolsengardens.Pages
                 _apointment.RealizationLink("Realisaties");
                 _apointment.ContactLink("Contact");
 
-
             }
 
             [Test]
 
             public void NavigateAndMakeAppointmentWithoutLastName()
             {
-                _apointment = new MakeApointmentMethod(_driver);
-
                 _apointment.Navigate();
 
                 _apointment.CookieButton.Click();
@@ -153,9 +148,6 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateAndMakeAppointmentWithoutPhoneNumber()
             {
-
-                _apointment = new MakeApointmentMethod(_driver);
-
                 _apointment.Navigate();
 
                 _apointment.CookieButton.Click();
@@ -183,15 +175,12 @@ namespace Biopoolsengardens.Pages
                 _apointment.RealizationLink("Realisaties");
                 _apointment.ContactLink("Contact");
 
-
             }
 
             [Test]
 
             public void NavigateAndMakeAppointmentWithoutEmailAddress()
             {
-                _apointment = new MakeApointmentMethod(_driver);
-
                 _apointment.Navigate();
 
                 _apointment.CookieButton.Click();
@@ -219,15 +208,13 @@ namespace Biopoolsengardens.Pages
                 _apointment.RealizationLink("Realisaties");
                 _apointment.ContactLink("Contact");
 
-
             }
 
             [Test]
 
             public void NavigateAndMakeAppointmentWithoutFillingTheCommentBox()
             {
-                _apointment = new MakeApointmentMethod(_driver);
-
+              
                 _apointment.Navigate();
 
                 _apointment.CookieButton.Click();
@@ -254,9 +241,6 @@ namespace Biopoolsengardens.Pages
                 _apointment.SwimmingPoolsLink("Zwembaden");
                 _apointment.RealizationLink("Realisaties");
                 _apointment.ContactLink("Contact");
-
-
-
 
             }
 
