@@ -37,6 +37,7 @@ namespace Biopoolsengardens
 
              _driver = new ChromeDriver(options);
 
+            _swimmingPonds = new SwimmingPondsMethod(_driver);
         }
 
         [Test] 
@@ -44,8 +45,6 @@ namespace Biopoolsengardens
 
         public void NavigateToSwimmingPondsPage()
         {
-
-            _swimmingPonds = new SwimmingPondsMethod(_driver);
 
             _swimmingPonds.Navigate();
             _swimmingPonds.CookieButton.Click();
@@ -68,7 +67,6 @@ namespace Biopoolsengardens
             _swimmingPonds.SwimmingPoolsLink("Zwembaden");
             _swimmingPonds.RealizationLink("Realisaties");
             _swimmingPonds.ContactLink("Contact");
-
 
         }
 

@@ -21,26 +21,23 @@ namespace Biopoolsengardens.Pages
         [SetUp]
         public void Setup()
         {
-            //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            // _driver.Manage().Window.Maximize();
+            _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            
+           // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
+            //options.AddArgument("--headless");
 
-            ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
-
-            options.AddArgument("--headless");
-
-
-            _driver = new ChromeDriver(options);
-
+          //  _driver = new ChromeDriver(options);
 
             _driver.Manage().Window.Maximize();
+            _poolsPage = new BioPoolsPageMethod(_driver);
         }
 
         [Test]
         [Retry(1)]
         public void NavigatetoPoolsPage()
         {
-
+            
             _poolsPage.Navigate();
 
             _poolsPage.Maximize();

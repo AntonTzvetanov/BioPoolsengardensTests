@@ -24,15 +24,15 @@ namespace Biopoolsengardens.Pages
 
             public void TestInit()
             {
-                //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                // _driver.Manage().Window.Maximize();
+                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                _driver.Manage().Window.Maximize();
 
 
-                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+               // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-                options.AddArgument("--headless");
+                //options.AddArgument("--headless");
 
-                _driver = new ChromeDriver(options);
+               // _driver = new ChromeDriver(options);
 
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
@@ -53,9 +53,9 @@ namespace Biopoolsengardens.Pages
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
 
-                _contactPage.FillForm(_user);
+                // _contactPage.FillForm(_user);
 
-                // _contactPage.Submit.Click();
+                _contactPage.Submit.Click();
 
                 _contactPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
                 _contactPage.MakeApointmentAssert("Maak een afspraak");
@@ -65,7 +65,6 @@ namespace Biopoolsengardens.Pages
                 _contactPage.SwimmingPoolsLink("Zwembaden");
                 _contactPage.RealizationLink("Realisaties");
                 _contactPage.ContactLink("Contact");
-
 
             }
 
@@ -106,7 +105,7 @@ namespace Biopoolsengardens.Pages
 
             public void FillFormWithoutPhoneNumber()
             {
-                
+
                 _contactPage.Navigate();
 
                 _contactPage.CookieButton.Click();
@@ -131,10 +130,9 @@ namespace Biopoolsengardens.Pages
                 _contactPage.RealizationLink("Realisaties");
                 _contactPage.ContactLink("Contact");
 
-
             }
 
-            [Test] 
+            [Test]
 
             public void FillFormWithoutFirstAndLastName()
             {
@@ -161,7 +159,6 @@ namespace Biopoolsengardens.Pages
                 _contactPage.SwimmingPoolsLink("Zwembaden");
                 _contactPage.RealizationLink("Realisaties");
                 _contactPage.ContactLink("Contact");
-
 
             }
 

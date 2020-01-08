@@ -37,7 +37,7 @@ namespace Biopoolsengardens
 
                 _driver = new ChromeDriver(options);
 
-
+                _poolsGalery = new PoolsPageGaleryMethod(_driver);
             }
 
             [Test]
@@ -46,7 +46,7 @@ namespace Biopoolsengardens
             public void NavigateToPoolsGalery()
             {
 
-                _poolsGalery = new PoolsPageGaleryMethod(_driver); 
+               
 
                 _poolsGalery.Maximize();
 

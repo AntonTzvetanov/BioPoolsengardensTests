@@ -27,7 +27,6 @@ namespace Biopoolsengardens.Pages
                 //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 // _driver.Manage().Window.Maximize();
 
-
                 ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
                 options.AddArgument("--headless");
@@ -72,7 +71,6 @@ namespace Biopoolsengardens.Pages
                 _offer.RealizationLink("Realisaties");
                 _offer.ContactLink("Contact");
 
-
             }
 
             [Test]
@@ -102,7 +100,6 @@ namespace Biopoolsengardens.Pages
                 _offer.SwimmingPoolsLink("Zwembaden");
                 _offer.RealizationLink("Realisaties");
                 _offer.ContactLink("Contact");
-
 
             }
 
@@ -136,7 +133,6 @@ namespace Biopoolsengardens.Pages
                 _offer.RealizationLink("Realisaties");
                 _offer.ContactLink("Contact");
 
-
             }
 
             [Test]
@@ -167,7 +163,6 @@ namespace Biopoolsengardens.Pages
                 _offer.SwimmingPoolsLink("Zwembaden");
                 _offer.RealizationLink("Realisaties");
                 _offer.ContactLink("Contact");
-
 
             }
 
