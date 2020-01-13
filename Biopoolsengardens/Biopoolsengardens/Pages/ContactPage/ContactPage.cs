@@ -27,7 +27,6 @@ namespace Biopoolsengardens.Pages
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 _driver.Manage().Window.Maximize();
 
-
                // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
                 //options.AddArgument("--headless");
@@ -43,7 +42,6 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateToContactPageAndFillTheForm()
             {
-
                 _contactPage.Navigate();
 
                 _contactPage.CookieButton.Click();
@@ -72,7 +70,6 @@ namespace Biopoolsengardens.Pages
 
             public void FillFormWithoutEmailAddress()
             {
-
                 _contactPage.Navigate();
 
                 _contactPage.CookieButton.Click();
@@ -119,7 +116,7 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.FillForm(_user);
 
-                _contactPage.Submit.Click();
+               // _contactPage.Submit.Click();
 
                 _contactPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
                 _contactPage.MakeApointmentAssert("Maak een afspraak");
