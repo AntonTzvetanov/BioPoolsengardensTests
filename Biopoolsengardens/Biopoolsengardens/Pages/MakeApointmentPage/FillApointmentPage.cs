@@ -1,6 +1,6 @@
 ﻿namespace Biopoolsengardens.Pages
 {
-    public partial class MakeApointmentMethod
+    public partial class MakeApointmentElements
     {
         public void FillApointment(UserProperties user)
         {

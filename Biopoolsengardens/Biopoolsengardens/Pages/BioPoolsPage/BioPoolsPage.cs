@@ -15,7 +15,7 @@ namespace Biopoolsengardens.Pages
     {
 
         private IWebDriver _driver;
-        private BioPoolsPageMethod _poolsPage;
+        private BioPoolsPageElements _poolsPage;
         
 
         [SetUp]
@@ -30,7 +30,7 @@ namespace Biopoolsengardens.Pages
           //  _driver = new ChromeDriver(options);
 
             _driver.Manage().Window.Maximize();
-            _poolsPage = new BioPoolsPageMethod(_driver);
+            _poolsPage = new BioPoolsPageElements(_driver);
         }
 
         [Test]

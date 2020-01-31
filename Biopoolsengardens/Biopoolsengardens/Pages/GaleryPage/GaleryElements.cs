@@ -2,10 +2,10 @@
 
 namespace Biopoolsengardens.Pages.Galery
 {
-    public partial class GaleryMethod : BasePage
+    public partial class GaleryElements : BasePage
     {
 
-        public GaleryMethod(IWebDriver driver)
+        public GaleryElements(IWebDriver driver)
             :base(driver)
         {
 

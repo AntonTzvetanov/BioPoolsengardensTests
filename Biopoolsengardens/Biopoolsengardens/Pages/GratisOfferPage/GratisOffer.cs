@@ -17,7 +17,7 @@ namespace Biopoolsengardens.Pages
 
             private IWebDriver _driver;
             
-            private GratisOfferMethod _offer;
+            private GratisOfferSelectors _offer;
             private OffersProperties _fillOffer;
 
             [SetUp] 
@@ -39,7 +39,7 @@ namespace Biopoolsengardens.Pages
 
                 _fillOffer = GratisOffer.FillUser();
 
-                _offer = new GratisOfferMethod(_driver);
+                _offer = new GratisOfferSelectors(_driver);
 
             }
             

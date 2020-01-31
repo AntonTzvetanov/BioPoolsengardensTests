@@ -16,7 +16,7 @@ namespace Biopoolsengardens.Pages
         {
             private IWebDriver _driver;
             
-            private MakeApointmentMethod _apointment;
+            private MakeApointmentElements _apointment;
 
             private UserProperties _makeApointment;
 
@@ -40,7 +40,7 @@ namespace Biopoolsengardens.Pages
                 
                 _makeApointment = MakeAppointmentUserFactory.User();
 
-                _apointment = new MakeApointmentMethod(_driver);
+                _apointment = new MakeApointmentElements(_driver);
             }
 
 

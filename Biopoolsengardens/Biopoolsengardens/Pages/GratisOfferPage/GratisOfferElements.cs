@@ -3,10 +3,10 @@ using OpenQA.Selenium;
 
 namespace Biopoolsengardens.Pages
 {
-    public partial  class GratisOfferMethod : BasePage
+    public partial  class GratisOfferSelectors : BasePage
     {
 
-        public GratisOfferMethod(IWebDriver driver)
+        public GratisOfferSelectors(IWebDriver driver)
             :base(driver)
         {
 

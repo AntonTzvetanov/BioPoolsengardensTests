@@ -19,7 +19,7 @@ namespace Biopoolsengardens
 
             private IWebDriver _driver;
             
-            private GaleryMethod _galery;
+            private GaleryElements _galery;
 
             [SetUp]
 
@@ -46,7 +46,7 @@ namespace Biopoolsengardens
 
             public void NavigateGalery()
             {
-                _galery = new GaleryMethod(_driver);
+                _galery = new GaleryElements(_driver);
 
                 _galery.Navigate();
 
