@@ -18,10 +18,7 @@ namespace Biopoolsengardens.Pages
             Driver.Url = "https://www.biopoolsengardens.be/nl";
 
         }
-        public void Maximize()
-        {
-            Driver.Manage().Window.Maximize();
-        }
+       
 
         public void AssertHref(string expected)
         {

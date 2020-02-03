@@ -21,14 +21,6 @@ namespace Biopoolsengardens.Pages.SwimmingPondsPage
 
         }
 
-        public void Maximize()
-        {
-
-            Driver.Manage().Window.Maximize();
-
-        }
-
-
         public void AssertHref(string expected)
         {
             Assert.AreEqual(expected, "");
@@ -37,6 +29,7 @@ namespace Biopoolsengardens.Pages.SwimmingPondsPage
         public IWebElement Example => Wait.Until((d) => d.FindElement(By.LinkText("Zwemvijvers")));
 
         public IWebElement Grid => Driver.FindElement(By.Id("element-141"));
+
 
     }
 }

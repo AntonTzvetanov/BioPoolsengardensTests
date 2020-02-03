@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Biopoolsengardens.Pages
 {
-    class GratisOfferTest
+  public  class GratisOfferTest
     {
 
         [TestFixture] 
@@ -52,6 +52,8 @@ namespace Biopoolsengardens.Pages
 
                 _offer.Navigate();
 
+                _offer.Maximize();
+
                 _offer.CookieButton.Click();
 
                 _offer.ShuttleButton.Click();
@@ -79,6 +81,8 @@ namespace Biopoolsengardens.Pages
             public void TestFreeOfferWithoutFirstAndLastName()
             {
                 _offer.Navigate();
+
+                _offer.Maximize();
 
                 _offer.CookieButton.Click();
 
@@ -112,6 +116,8 @@ namespace Biopoolsengardens.Pages
 
                 _offer.Navigate();
 
+                _offer.Maximize();
+
                 _offer.CookieButton.Click();
 
                 _offer.ShuttleButton.Click();
@@ -142,6 +148,8 @@ namespace Biopoolsengardens.Pages
             {
 
                 _offer.Navigate();
+
+                _offer.Maximize();
 
                 _offer.CookieButton.Click();
 

@@ -11,10 +11,7 @@ namespace Biopoolsengardens.Pages.PoolsPageGalery
 
         }
 
-        public void Maximize()
-        {
-            Driver.Manage().Window.Maximize();
-        }
+       
 
         public void Navigate()
         {

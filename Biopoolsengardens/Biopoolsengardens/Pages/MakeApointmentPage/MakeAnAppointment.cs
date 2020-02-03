@@ -33,11 +33,8 @@ namespace Biopoolsengardens.Pages
 
                 options.AddArgument("--headless");
 
-
                 _driver = new ChromeDriver(options);
 
-                _driver.Manage().Window.Maximize();
-                
                 _makeApointment = MakeAppointmentUserFactory.User();
 
                 _apointment = new MakeApointmentElements(_driver);
@@ -51,6 +48,8 @@ namespace Biopoolsengardens.Pages
             {
                 
                 _apointment.Navigate();
+
+                _apointment.Maximize();
 
                 _apointment.CookieButton.Click();
 
@@ -82,6 +81,8 @@ namespace Biopoolsengardens.Pages
             public void NavigateAndMakeAppointmentWithoutFirstName()
             {
                 _apointment.Navigate();
+
+                _apointment.Maximize();
 
                 _apointment.CookieButton.Click();
 
@@ -115,6 +116,8 @@ namespace Biopoolsengardens.Pages
             public void NavigateAndMakeAppointmentWithoutLastName()
             {
                 _apointment.Navigate();
+
+                _apointment.Maximize();
 
                 _apointment.CookieButton.Click();
 
@@ -150,6 +153,8 @@ namespace Biopoolsengardens.Pages
             {
                 _apointment.Navigate();
 
+                _apointment.Maximize();
+
                 _apointment.CookieButton.Click();
 
                 _apointment.OfferButton.Click();
@@ -182,6 +187,8 @@ namespace Biopoolsengardens.Pages
             public void NavigateAndMakeAppointmentWithoutEmailAddress()
             {
                 _apointment.Navigate();
+
+                _apointment.Maximize();
 
                 _apointment.CookieButton.Click();
 
@@ -216,6 +223,8 @@ namespace Biopoolsengardens.Pages
             {
               
                 _apointment.Navigate();
+
+                _apointment.Maximize();
 
                 _apointment.CookieButton.Click();
 
