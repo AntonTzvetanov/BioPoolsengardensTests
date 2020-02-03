@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace Biopoolsengardens.Pages
 {
-    class ContactPage
+   class ContactPage 
     {
         [TestFixture]
 
@@ -25,7 +25,7 @@ namespace Biopoolsengardens.Pages
             public void TestInit()
             {
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                _driver.Manage().Window.Maximize();
+                
 
                // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
@@ -44,6 +44,8 @@ namespace Biopoolsengardens.Pages
             {
                 _contactPage.Navigate();
 
+                _contactPage.Maximize();
+                
                 _contactPage.CookieButton.Click();
 
                 _contactPage.ContactPageButton.Click();
@@ -51,9 +53,9 @@ namespace Biopoolsengardens.Pages
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
 
-                // _contactPage.FillForm(_user);
+                 _contactPage.FillForm(_user);
 
-                _contactPage.Submit.Click();
+               // _contactPage.Submit.Click();
 
                 _contactPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
                 _contactPage.MakeApointmentAssert("Maak een afspraak");
@@ -71,6 +73,8 @@ namespace Biopoolsengardens.Pages
             public void FillFormWithoutEmailAddress()
             {
                 _contactPage.Navigate();
+
+                _contactPage.Maximize();
 
                 _contactPage.CookieButton.Click();
 
@@ -105,6 +109,8 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.Navigate();
 
+                _contactPage.Maximize();
+
                 _contactPage.CookieButton.Click();
 
                 _contactPage.ContactPageButton.Click();
@@ -134,6 +140,8 @@ namespace Biopoolsengardens.Pages
             public void FillFormWithoutFirstAndLastName()
             {
                 _contactPage.Navigate();
+
+                _contactPage.Maximize();
 
                 _contactPage.CookieButton.Click();
 

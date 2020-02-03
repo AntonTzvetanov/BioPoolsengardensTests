@@ -6,7 +6,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System.IO;
-using System.Reflection;
 using System.Threading;
 
 namespace Biopoolsengardens
@@ -45,6 +44,8 @@ namespace Biopoolsengardens
 
         public void NavigateToSwimmingPondsPage()
         {
+
+            _swimmingPonds.Navigate();
 
             _swimmingPonds.Navigate();
             _swimmingPonds.CookieButton.Click();

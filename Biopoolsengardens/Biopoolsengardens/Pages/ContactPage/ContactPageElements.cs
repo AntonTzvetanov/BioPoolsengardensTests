@@ -9,11 +9,7 @@ namespace Biopoolsengardens.Pages
         {
         }
 
-        public void Maximize()
-        {
-            Driver.Manage().Window.Maximize();
-              
-        }
+       
 
         public void Navigate()
         {

@@ -29,7 +29,6 @@ namespace Biopoolsengardens.Pages
 
           //  _driver = new ChromeDriver(options);
 
-            _driver.Manage().Window.Maximize();
             _poolsPage = new BioPoolsPageElements(_driver);
         }
 
