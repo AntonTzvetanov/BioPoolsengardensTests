@@ -1,6 +1,6 @@
 ﻿namespace Biopoolsengardens.Pages
 {
-    public partial class GratisOfferMethod
+    public partial class GratisOfferSelectors
     {
 
         public void FillOfferForm(OffersProperties offer)

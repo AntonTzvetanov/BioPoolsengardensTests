@@ -3,9 +3,9 @@ using OpenQA.Selenium;
 
 namespace Biopoolsengardens.Pages.PoolsPageGalery
 {
-    class PoolsPageGaleryMethod : BasePage
+    class PoolsPageGaleryElements : BasePage
     {
-        public PoolsPageGaleryMethod(IWebDriver driver)
+        public PoolsPageGaleryElements(IWebDriver driver)
             :base(driver)
         {
 

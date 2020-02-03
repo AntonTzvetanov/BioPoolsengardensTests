@@ -11,10 +11,8 @@ namespace Biopoolsengardens.Pages
 
         public void Maximize()
         {
-
-
             Driver.Manage().Window.Maximize();
-
+              
         }
 
         public void Navigate()
@@ -44,8 +42,6 @@ namespace Biopoolsengardens.Pages
         public IWebElement TextArea => Driver.FindElement(By.Id("fields[540]"));
 
         public IWebElement Submit => Driver.FindElement(By.XPath("//*[@id='grid_48191dcd95']/div[2]/div/div[2]/div/form/div[5]/div/div/button"));
-
-
 
 
     }

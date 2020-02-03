@@ -3,9 +3,9 @@ using OpenQA.Selenium;
 
 namespace Biopoolsengardens.BioPoolsPage
 {
-    class BioPoolsPageMethod : BasePage
+    class BioPoolsPageElements : BasePage
     {
-        public BioPoolsPageMethod(IWebDriver driver) : base(driver)
+        public BioPoolsPageElements(IWebDriver driver) : base(driver)
         {
         }
 

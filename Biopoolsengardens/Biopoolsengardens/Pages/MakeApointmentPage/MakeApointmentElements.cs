@@ -3,9 +3,9 @@ using OpenQA.Selenium;
 
 namespace Biopoolsengardens.Pages
 {
-   public partial class MakeApointmentMethod : BasePage
+   public partial class MakeApointmentElements : BasePage
     {
-        public MakeApointmentMethod(IWebDriver driver)
+        public MakeApointmentElements(IWebDriver driver)
             : base(driver)
         {
 

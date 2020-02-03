@@ -20,7 +20,7 @@ namespace Biopoolsengardens
 
             private IWebDriver _driver;
            
-            private PoolsPageGaleryMethod _poolsGalery;
+            private PoolsPageGaleryElements _poolsGalery;
 
             [SetUp]
 
@@ -37,7 +37,7 @@ namespace Biopoolsengardens
 
                 _driver = new ChromeDriver(options);
 
-                _poolsGalery = new PoolsPageGaleryMethod(_driver);
+                _poolsGalery = new PoolsPageGaleryElements(_driver);
             }
 
             [Test]
