@@ -16,4 +16,8 @@
     <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include=".circleci\config.yml" />
+  </ItemGroup>
+
 </Project>
