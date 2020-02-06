@@ -3,10 +3,7 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Threading;
 
