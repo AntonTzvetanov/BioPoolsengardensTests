@@ -18,13 +18,6 @@ namespace Biopoolsengardens.Pages
 
         }
 
-        public void AssertHref(string expected)
-        {
-
-            Assert.AreEqual(expected,"");
-
-        }
-
         public IWebElement ContactPageButton => Driver.FindElement(By.LinkText("Contact"));
 
         public IWebElement ShuttleElement => Driver.FindElement(By.Id("grid_2f3d0e64e9"));
@@ -39,6 +32,8 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement Submit => Driver.FindElement(By.XPath("//*[@id='grid_48191dcd95']/div[2]/div/div[2]/div/form/div[5]/div/div/button"));
 
+        public IWebElement SocialMediaButton => Driver.FindElement(By.Id("element-151"));
 
+        public IWebElement NivekoLinkToWebsite => Driver.FindElement(By.ClassName("FlexEmbed"));
     }
 }
