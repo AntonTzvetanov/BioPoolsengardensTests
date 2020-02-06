@@ -8,14 +8,14 @@ using System.Reflection;
 
 namespace Biopoolsengardens.Pages
 {
-    class MakeAnAppointment 
+    public class MakeAnAppointment
     {
 
         [TestFixture]
-         public class MaakEenAfspraak
+        public class MaakEenAfspraak
         {
             private IWebDriver _driver;
-            
+
             private MakeApointmentElements _apointment;
 
             private UserProperties _makeApointment;
@@ -25,15 +25,13 @@ namespace Biopoolsengardens.Pages
 
             public void SetUp()
             {
-                //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                // _driver.Manage().Window.Maximize();
+                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                
+               // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
+               // options.AddArgument("--headless");
 
-                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
-
-                options.AddArgument("--headless");
-
-                _driver = new ChromeDriver(options);
+              //  _driver = new ChromeDriver(options);
 
                 _makeApointment = MakeAppointmentUserFactory.User();
 
@@ -46,7 +44,7 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateAndMakeAppointment()
             {
-                
+
                 _apointment.Navigate();
 
                 _apointment.Maximize();
@@ -97,7 +95,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Options.Click();
 
-                // _apointment.Subbmit.Click();
+                _apointment.Subbmit.Click();
 
 
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
@@ -221,7 +219,7 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateAndMakeAppointmentWithoutFillingTheCommentBox()
             {
-              
+
                 _apointment.Navigate();
 
                 _apointment.Maximize();

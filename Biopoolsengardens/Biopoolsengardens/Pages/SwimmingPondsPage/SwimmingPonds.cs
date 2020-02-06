@@ -16,7 +16,7 @@ namespace Biopoolsengardens
     {
 
         private IWebDriver _driver;
-        private WebDriverWait _wait;
+        
         private SwimmingPondsMethod _swimmingPonds;
 
         [SetUp]
