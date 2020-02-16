@@ -4,9 +4,7 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using System.IO;
-using System.Reflection;
 using System.Threading;
 
 namespace Biopoolsengardens
@@ -71,7 +69,7 @@ namespace Biopoolsengardens
                 {
 
                     _poolsGalery.NextPuctureButton.Click();
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
                 }
 
                 _poolsGalery.CloseButton.Click();

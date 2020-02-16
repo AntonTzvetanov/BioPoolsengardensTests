@@ -33,11 +33,6 @@ namespace Biopoolsengardens
         public IWebElement MoveUpArrowButton => Wait.Until((e) => e.FindElement(By.ClassName("custom-style-33")));
 
 
-        public void Navigate(string url)
-        {
-            Driver.Url = url;
-        }
-
         public void AssertIsDisplayedGratisOfferLink(string expected)
         {
 
