@@ -17,7 +17,7 @@ namespace Biopoolsengardens
         {
 
             private IWebDriver _driver;
-           
+
             private PoolsPageGaleryElements _poolsGalery;
 
             [SetUp]
@@ -44,7 +44,7 @@ namespace Biopoolsengardens
             public void NavigateToPoolsGalery()
             {
 
-               
+
 
                 _poolsGalery.Maximize();
 
@@ -62,8 +62,8 @@ namespace Biopoolsengardens
                 action.ClickAndHold(_poolsGalery.SelectPictures)
                     .Release()
                     .Perform();
-              
-                
+
+
 
                 for (int i = 0; i < 40; i++)
                 {

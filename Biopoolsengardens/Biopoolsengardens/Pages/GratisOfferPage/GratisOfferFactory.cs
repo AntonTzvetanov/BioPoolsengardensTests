@@ -4,7 +4,7 @@
     {
 
 
-        public  static OffersProperties FillUser()
+        public static OffersProperties FillUser()
         {
             return new OffersProperties
             {

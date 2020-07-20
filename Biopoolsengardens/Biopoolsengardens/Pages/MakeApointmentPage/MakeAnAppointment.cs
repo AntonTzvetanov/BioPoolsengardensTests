@@ -26,12 +26,12 @@ namespace Biopoolsengardens.Pages
             public void SetUp()
             {
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                
-               // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-               // options.AddArgument("--headless");
+                // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-              //  _driver = new ChromeDriver(options);
+                // options.AddArgument("--headless");
+
+                //  _driver = new ChromeDriver(options);
 
                 _makeApointment = MakeAppointmentUserFactory.User();
 

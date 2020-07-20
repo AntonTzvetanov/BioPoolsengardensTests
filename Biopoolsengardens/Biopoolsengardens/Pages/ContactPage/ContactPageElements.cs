@@ -1,15 +1,14 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Biopoolsengardens.Pages
 {
-   public partial class ContactePageMethod : BasePage
+    public partial class ContactePageMethod : BasePage
     {
         public ContactePageMethod(IWebDriver driver) : base(driver)
         {
         }
 
-       
+
 
         public void Navigate()
         {

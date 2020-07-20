@@ -6,7 +6,7 @@ namespace Biopoolsengardens.Pages.Galery
     {
 
         public GaleryElements(IWebDriver driver)
-            :base(driver)
+            : base(driver)
         {
 
         }
@@ -25,7 +25,7 @@ namespace Biopoolsengardens.Pages.Galery
 
         public IWebElement NextPictureButton => Driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div[2]/button[2]"));
 
-       
+
 
 
     }

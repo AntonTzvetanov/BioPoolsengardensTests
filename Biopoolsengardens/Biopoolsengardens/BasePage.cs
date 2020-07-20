@@ -10,7 +10,7 @@ namespace Biopoolsengardens
         private IWebDriver _driver;
         private WebDriverWait _wait;
 
-        public BasePage(IWebDriver driver) 
+        public BasePage(IWebDriver driver)
         {
             _driver = driver;
             _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(2));

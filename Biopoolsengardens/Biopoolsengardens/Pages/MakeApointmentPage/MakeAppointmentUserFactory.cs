@@ -1,6 +1,6 @@
 ﻿namespace Biopoolsengardens.Pages
 {
-    public partial class MakeAppointmentUserFactory 
+    public partial class MakeAppointmentUserFactory
     {
 
         public static UserProperties User()

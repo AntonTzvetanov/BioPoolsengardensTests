@@ -6,12 +6,12 @@ namespace Biopoolsengardens.Pages.PoolsPageGalery
     class PoolsPageGaleryElements : BasePage
     {
         public PoolsPageGaleryElements(IWebDriver driver)
-            :base(driver)
+            : base(driver)
         {
 
         }
 
-       
+
 
         public void Navigate()
         {

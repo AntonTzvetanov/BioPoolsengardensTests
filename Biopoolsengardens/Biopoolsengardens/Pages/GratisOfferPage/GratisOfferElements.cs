@@ -3,11 +3,11 @@ using OpenQA.Selenium;
 
 namespace Biopoolsengardens.Pages
 {
-    public partial  class GratisOfferSelectors : BasePage
+    public partial class GratisOfferSelectors : BasePage
     {
 
         public GratisOfferSelectors(IWebDriver driver)
-            :base(driver)
+            : base(driver)
         {
 
         }
@@ -18,7 +18,7 @@ namespace Biopoolsengardens.Pages
             Driver.Url = "https://www.biopoolsengardens.be/nl";
 
         }
-       
+
 
         public void AssertHref(string expected)
         {
@@ -41,6 +41,6 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement SubbmitButton => Driver.FindElement(By.XPath("//*[@id='grid_48191dcd95']/div[2]/div/div[2]/div/form/div[5]/div/div/button"));
 
-        
+
     }
 }

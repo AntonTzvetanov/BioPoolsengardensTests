@@ -18,7 +18,7 @@ namespace Biopoolsengardens
         {
 
             private IWebDriver _driver;
-            
+
             private GaleryElements _galery;
 
             [SetUp]
@@ -26,18 +26,18 @@ namespace Biopoolsengardens
             public void SetUp()
             {
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                 _driver.Manage().Window.Maximize();
+                _driver.Manage().Window.Maximize();
 
 
-               // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+                // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-               // options.AddArgument("--headless");
+                // options.AddArgument("--headless");
 
 
-              // _driver = new ChromeDriver(options); 
+                // _driver = new ChromeDriver(options); 
 
                 _driver.Manage().Window.Maximize();
-               
+
             }
 
 
@@ -67,7 +67,7 @@ namespace Biopoolsengardens
                 }
 
                 _galery.MoveUpArrowButton.Click();
-               
+
             }
 
             [TearDown]

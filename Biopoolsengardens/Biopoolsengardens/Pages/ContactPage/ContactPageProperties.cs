@@ -1,10 +1,10 @@
 ﻿namespace Biopoolsengardens.Pages
 {
-   public  class ContactPageFactory
+    public class ContactPageFactory
     {
 
 
-        public string  Name { get; set; }
+        public string Name { get; set; }
 
         public string RealTelepfoneNumber { get; set; }
 
