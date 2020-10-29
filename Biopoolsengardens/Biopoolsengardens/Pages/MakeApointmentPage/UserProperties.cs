@@ -1,6 +1,6 @@
 ﻿namespace Biopoolsengardens.Pages
 {
-   public  class UserProperties
+    public class UserProperties
     {
 
         public string UserName { get; set; }

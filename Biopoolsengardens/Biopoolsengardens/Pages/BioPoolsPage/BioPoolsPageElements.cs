@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Biopoolsengardens.BioPoolsPage
 {
@@ -9,7 +8,7 @@ namespace Biopoolsengardens.BioPoolsPage
         {
         }
 
-       
+
         public void Navigate()
         {
 
@@ -17,7 +16,7 @@ namespace Biopoolsengardens.BioPoolsPage
 
         }
 
-     
+
 
         public IWebElement ArrowButton => Driver.FindElement(By.ClassName("shuttle-Widget"));
 

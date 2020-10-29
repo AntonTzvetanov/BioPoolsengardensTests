@@ -4,7 +4,6 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using System.IO;
 using System.Threading;
 
@@ -16,30 +15,30 @@ namespace Biopoolsengardens
     {
 
         private IWebDriver _driver;
-        
+
         private SwimmingPondsMethod _swimmingPonds;
 
         [SetUp]
 
         public void TestInit()
         {
-          
-
-           //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-           // _driver.Manage().Window.Maximize();
 
 
-             ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+            //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            // _driver.Manage().Window.Maximize();
 
-             options.AddArgument("--headless");
+
+            ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+
+            options.AddArgument("--headless");
 
 
-             _driver = new ChromeDriver(options);
+            _driver = new ChromeDriver(options);
 
             _swimmingPonds = new SwimmingPondsMethod(_driver);
         }
 
-        [Test] 
+        [Test]
         [Retry(1)]
 
         public void NavigateToSwimmingPondsPage()
@@ -51,7 +50,7 @@ namespace Biopoolsengardens
             _swimmingPonds.CookieButton.Click();
 
             _swimmingPonds.Example.Click();
-           
+
             Actions action = new Actions(_driver);
             action.ClickAndHold(_swimmingPonds.Grid).Perform();
             action.Release(_swimmingPonds.Grid).Perform();
@@ -68,12 +67,6 @@ namespace Biopoolsengardens
             _swimmingPonds.SwimmingPoolsLink("Zwembaden");
             _swimmingPonds.RealizationLink("Realisaties");
             _swimmingPonds.ContactLink("Contact");
-
-
-
-
-
-
 
 
         }
@@ -101,5 +94,5 @@ namespace Biopoolsengardens
         }
 
     }
-   
+
 }

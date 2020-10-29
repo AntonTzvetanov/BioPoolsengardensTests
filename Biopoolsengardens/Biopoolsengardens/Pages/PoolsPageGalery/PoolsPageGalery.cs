@@ -4,7 +4,6 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using System.IO;
 using System.Reflection;
 using System.Threading;
@@ -19,23 +18,23 @@ namespace Biopoolsengardens
         {
 
             private IWebDriver _driver;
-           
+
             private PoolsPageGaleryElements _poolsGalery;
 
             [SetUp]
 
             public void SetUp()
             {
-                //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                // _driver.Manage().Window.Maximize();
+                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                _driver.Manage().Window.Maximize();
 
 
-                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+                // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-                options.AddArgument("--headless");
+                // options.AddArgument("--headless");
 
 
-                _driver = new ChromeDriver(options);
+                // _driver = new ChromeDriver(options);
 
                 _poolsGalery = new PoolsPageGaleryElements(_driver);
             }
@@ -46,8 +45,6 @@ namespace Biopoolsengardens
             public void NavigateToPoolsGalery()
             {
 
-               
-
                 _poolsGalery.Maximize();
 
                 _poolsGalery.Navigate();
@@ -57,21 +54,21 @@ namespace Biopoolsengardens
                 _poolsGalery.PoolsButton.Click();
 
                 Actions action = new Actions(_driver);
-                action.ClickAndHold(_poolsGalery.SocialLinksGrid)
+                action.MoveToElement(_poolsGalery.SocialLinksGrid)
                     .Release()
                     .Perform();
 
                 action.ClickAndHold(_poolsGalery.SelectPictures)
                     .Release()
                     .Perform();
-              
-                
+
+
 
                 for (int i = 0; i < 40; i++)
                 {
 
                     _poolsGalery.NextPuctureButton.Click();
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
                 }
 
                 _poolsGalery.CloseButton.Click();

@@ -1,6 +1,6 @@
 ﻿namespace Biopoolsengardens.Pages
 {
-    public  class OffersProperties
+    public class OffersProperties
     {
 
         public string FirstAndLastName { get; set; }

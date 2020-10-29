@@ -3,24 +3,23 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.IO;
-using System.Reflection;
 
 namespace Biopoolsengardens.Pages
 {
-  public  class GratisOfferTest
+    public class GratisOfferTest
     {
 
-        [TestFixture] 
+        [TestFixture]
 
         public class FreeOffer
         {
 
             private IWebDriver _driver;
-            
+
             private GratisOfferSelectors _offer;
             private OffersProperties _fillOffer;
 
-            [SetUp] 
+            [SetUp]
 
             public void SetUp()
             {
@@ -42,7 +41,7 @@ namespace Biopoolsengardens.Pages
                 _offer = new GratisOfferSelectors(_driver);
 
             }
-            
+
 
             [Test]
             [Retry(1)]

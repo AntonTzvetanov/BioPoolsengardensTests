@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
+using NUnit.Framework.Internal;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
@@ -26,6 +27,8 @@ namespace Biopoolsengardens.Pages
 
             public void TestInit()
             {
+
+
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 
 
@@ -184,10 +187,10 @@ namespace Biopoolsengardens.Pages
                 _contactPage.SocialMediaButton.Click();
 
                 Thread.Sleep(1000);
-                
+
                 var tabs = _driver.WindowHandles;
 
-                if (tabs.Count >1)
+                if (tabs.Count > 1)
                 {
                     _driver.SwitchTo().Window(tabs[1]);
                     _driver.Close();
@@ -200,6 +203,14 @@ namespace Biopoolsengardens.Pages
                 Assert.IsTrue(_contactPage.SocialMediaButton.Displayed);
                 Assert.IsTrue(_contactPage.SocialMediaButton.Enabled);
 
+            }
+
+            public void TestSomething()
+            {
+
+                _driver.Navigate();
+                _contactPage.Maximize();
+                _contactPage.CookieButton.Click();
             }
 
             [TearDown]

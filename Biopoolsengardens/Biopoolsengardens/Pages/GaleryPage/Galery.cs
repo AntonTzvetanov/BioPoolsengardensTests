@@ -5,8 +5,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System.IO;
-using System.Reflection;
 using System.Threading;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace Biopoolsengardens
 {
@@ -18,26 +19,24 @@ namespace Biopoolsengardens
         {
 
             private IWebDriver _driver;
-            
+
             private GaleryElements _galery;
 
             [SetUp]
 
             public void SetUp()
             {
-                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                 _driver.Manage().Window.Maximize();
+
+                new DriverManager().SetUpDriver(new ChromeConfig());
+                // _driver = new ChromeDriver();
+
+                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+
+                options.AddArgument("--headless");
 
 
-               // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+                _driver = new ChromeDriver(options);
 
-               // options.AddArgument("--headless");
-
-
-              // _driver = new ChromeDriver(options); 
-
-                _driver.Manage().Window.Maximize();
-               
             }
 
 
@@ -67,7 +66,7 @@ namespace Biopoolsengardens
                 }
 
                 _galery.MoveUpArrowButton.Click();
-               
+
             }
 
             [TearDown]

@@ -11,23 +11,23 @@ namespace Biopoolsengardens.Pages
 {
 
     [TestFixture]
-    public class TestsPoolsPage 
+    public class TestsPoolsPage
     {
 
         private IWebDriver _driver;
         private BioPoolsPageElements _poolsPage;
-        
+
 
         [SetUp]
         public void Setup()
         {
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            
-           // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+
+            // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
             //options.AddArgument("--headless");
 
-          //  _driver = new ChromeDriver(options);
+            //  _driver = new ChromeDriver(options);
 
             _poolsPage = new BioPoolsPageElements(_driver);
         }
@@ -36,7 +36,7 @@ namespace Biopoolsengardens.Pages
         [Retry(1)]
         public void NavigatetoPoolsPage()
         {
-            
+
             _poolsPage.Navigate();
 
             _poolsPage.Maximize();
