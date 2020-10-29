@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 
 namespace Biopoolsengardens
@@ -24,16 +25,16 @@ namespace Biopoolsengardens
 
             public void SetUp()
             {
-                //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                // _driver.Manage().Window.Maximize();
+                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                _driver.Manage().Window.Maximize();
 
 
-                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+                // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-                options.AddArgument("--headless");
+                // options.AddArgument("--headless");
 
 
-                _driver = new ChromeDriver(options);
+                // _driver = new ChromeDriver(options);
 
                 _poolsGalery = new PoolsPageGaleryElements(_driver);
             }
@@ -44,8 +45,6 @@ namespace Biopoolsengardens
             public void NavigateToPoolsGalery()
             {
 
-
-
                 _poolsGalery.Maximize();
 
                 _poolsGalery.Navigate();
@@ -55,7 +54,7 @@ namespace Biopoolsengardens
                 _poolsGalery.PoolsButton.Click();
 
                 Actions action = new Actions(_driver);
-                action.ClickAndHold(_poolsGalery.SocialLinksGrid)
+                action.MoveToElement(_poolsGalery.SocialLinksGrid)
                     .Release()
                     .Perform();
 

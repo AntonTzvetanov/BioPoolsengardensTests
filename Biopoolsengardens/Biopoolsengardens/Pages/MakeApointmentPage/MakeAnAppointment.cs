@@ -95,7 +95,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Options.Click();
 
-                _apointment.Subbmit.Click();
+              //  _apointment.Subbmit.Click();
 
 
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");

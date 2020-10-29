@@ -27,8 +27,8 @@ namespace Biopoolsengardens.Pages
 
             public void TestInit()
             {
-               
-                
+
+
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 
 
@@ -205,11 +205,11 @@ namespace Biopoolsengardens.Pages
 
             }
 
-         public void TestSomething()
+            public void TestSomething()
             {
 
-               _driver.Navigate();
-               _contactPage.Maximize();
+                _driver.Navigate();
+                _contactPage.Maximize();
                 _contactPage.CookieButton.Click();
             }
 

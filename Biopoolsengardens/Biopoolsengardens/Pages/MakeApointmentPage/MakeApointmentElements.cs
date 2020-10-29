@@ -27,7 +27,7 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement OfferButton => Driver.FindElement(By.Id("element-773"));
 
-        public IWebElement ShuttleElement => Driver.FindElement(By.Id("grid_2f3d0e64e9"));
+        public IWebElement ShuttleElement => Driver.FindElement(By.Id("element-567"));
 
         public IWebElement Name => Driver.FindElement(By.Id("fields[554]"));
 
@@ -41,6 +41,6 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement CommentBox => Driver.FindElement(By.Id("fields[557]"));
 
-        public IWebElement Subbmit => Driver.FindElement(By.XPath("//*[@id='grid_48191dcd95']/div[2]/div/div[2]/div/form/div[5]/div/div/button"));
+        public IWebElement Subbmit => Driver.FindElement(By.LinkText("Versturen"));
     }
 }

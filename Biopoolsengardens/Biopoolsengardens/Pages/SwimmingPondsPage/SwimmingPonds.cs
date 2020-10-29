@@ -69,12 +69,6 @@ namespace Biopoolsengardens
             _swimmingPonds.ContactLink("Contact");
 
 
-
-
-
-
-
-
         }
 
 

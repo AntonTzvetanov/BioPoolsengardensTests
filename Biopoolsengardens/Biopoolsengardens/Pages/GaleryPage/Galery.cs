@@ -28,16 +28,14 @@ namespace Biopoolsengardens
             {
 
                 new DriverManager().SetUpDriver(new ChromeConfig());
-               // _driver = new ChromeDriver();
+                // _driver = new ChromeDriver();
 
-                 ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
                 options.AddArgument("--headless");
 
 
-                 _driver = new ChromeDriver(options); 
-
-                _driver.Manage().Window.Maximize();
+                _driver = new ChromeDriver(options);
 
             }
 

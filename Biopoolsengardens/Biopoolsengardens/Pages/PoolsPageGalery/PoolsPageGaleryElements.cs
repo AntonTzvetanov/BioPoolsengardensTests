@@ -25,7 +25,7 @@ namespace Biopoolsengardens.Pages.PoolsPageGalery
 
         public IWebElement PoolsButton => Driver.FindElement(By.LinkText("Zwembaden"));
 
-        public IWebElement SocialLinksGrid => Driver.FindElement(By.Id("grid_2f3d0e64e9"));
+        public IWebElement SocialLinksGrid => Driver.FindElement(By.Id("72"));
 
         public IWebElement SelectPictures => Driver.FindElement(By.Id("element-758"));
 
