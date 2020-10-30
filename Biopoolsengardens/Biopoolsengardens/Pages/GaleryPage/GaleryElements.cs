@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Biopoolsengardens.Pages.Galery
+namespace Biopoolsengardens.Pages
 {
     public partial class GaleryElements : BasePage
     {

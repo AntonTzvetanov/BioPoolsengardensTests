@@ -1,4 +1,4 @@
-﻿using Biopoolsengardens.Pages.Galery;
+﻿using Biopoolsengardens.Pages;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
