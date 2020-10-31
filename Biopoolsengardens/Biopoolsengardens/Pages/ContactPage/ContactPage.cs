@@ -208,7 +208,6 @@ namespace Biopoolsengardens.Pages
 
             public void TestSomething()
             {
-
                 _driver.Navigate();
                 _contactPage.Maximize();
                 _contactPage.CookieButton.Click();

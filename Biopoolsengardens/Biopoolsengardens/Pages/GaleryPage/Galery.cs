@@ -28,7 +28,7 @@ namespace Biopoolsengardens
             {
 
                 new DriverManager().SetUpDriver(new ChromeConfig());
-                // _driver = new ChromeDriver();
+                 _driver = new ChromeDriver();
 
                 ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
