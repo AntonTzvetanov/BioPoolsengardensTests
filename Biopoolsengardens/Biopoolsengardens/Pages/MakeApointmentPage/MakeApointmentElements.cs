@@ -41,6 +41,8 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement CommentBox => Driver.FindElement(By.Id("fields[557]"));
 
-        public IWebElement Subbmit => Driver.FindElement(By.Name("_origin"));
+        public IWebElement Subbmit => Wait.Until((e) => e.FindElement (By.Name("_origin")));
+
+
     }
 }

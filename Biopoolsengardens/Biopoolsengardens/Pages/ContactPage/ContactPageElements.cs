@@ -19,7 +19,7 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement ContactPageButton => Driver.FindElement(By.LinkText("Contact"));
 
-        public IWebElement ShuttleElement => Driver.FindElement(By.Id("grid_2f3d0e64e9"));
+        public IWebElement ShuttleElement => Driver.FindElement(By.Id("grid_6eae61039e"));
 
         public IWebElement ContactField => Driver.FindElement(By.Id("fields[538]"));
 
@@ -29,7 +29,7 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement TextArea => Driver.FindElement(By.Id("fields[540]"));
 
-        public IWebElement Submit => Driver.FindElement(By.XPath("//*[@id='grid_48191dcd95']/div[2]/div/div[2]/div/form/div[5]/div/div/button"));
+        public IWebElement Submit => Driver.FindElement(By.Name("_origin"));
 
         public IWebElement SocialMediaButton => Driver.FindElement(By.Id("element-151"));
 

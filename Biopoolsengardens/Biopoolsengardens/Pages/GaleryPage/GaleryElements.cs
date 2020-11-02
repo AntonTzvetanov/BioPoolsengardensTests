@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Biopoolsengardens.Pages.Galery
+namespace Biopoolsengardens.Pages
 {
     public partial class GaleryElements : BasePage
     {
@@ -26,7 +26,7 @@ namespace Biopoolsengardens.Pages.Galery
         public IWebElement NextPictureButton => Driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div[2]/button[2]"));
 
 
-
+        public IWebElement Test => Driver.FindElement(By.Id(""));
 
     }
 }

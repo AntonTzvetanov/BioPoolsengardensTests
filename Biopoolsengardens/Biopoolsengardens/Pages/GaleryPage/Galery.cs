@@ -1,4 +1,4 @@
-﻿using Biopoolsengardens.Pages.Galery;
+﻿using Biopoolsengardens.Pages;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
@@ -28,7 +28,7 @@ namespace Biopoolsengardens
             {
 
                 new DriverManager().SetUpDriver(new ChromeConfig());
-                // _driver = new ChromeDriver();
+                 _driver = new ChromeDriver();
 
                 ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
