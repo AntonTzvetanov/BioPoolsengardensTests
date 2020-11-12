@@ -1,4 +1,4 @@
-﻿using Biopoolsengardens.Pages.SwimmingPondsPage;
+﻿using Biopoolsengardens.Pages;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
@@ -43,8 +43,6 @@ namespace Biopoolsengardens
 
         public void NavigateToSwimmingPondsPage()
         {
-
-            _swimmingPonds.Navigate();
 
             _swimmingPonds.Navigate();
             _swimmingPonds.CookieButton.Click();

@@ -16,7 +16,7 @@ namespace Biopoolsengardens.Pages
 
             private IWebDriver _driver;
 
-            private GratisOfferSelectors _offer;
+            public GratisOfferSelectors _offer;
             private OffersProperties _fillOffer;
 
             [SetUp]

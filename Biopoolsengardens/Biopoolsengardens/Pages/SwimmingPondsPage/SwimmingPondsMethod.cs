@@ -1,12 +1,13 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 
-namespace Biopoolsengardens.Pages.SwimmingPondsPage
+namespace Biopoolsengardens.Pages
 {
     class SwimmingPondsMethod : BasePage
     {
 
-        public SwimmingPondsMethod(IWebDriver driver) : base(driver)
+        public SwimmingPondsMethod(IWebDriver driver) 
+            : base(driver)
         {
 
         }
