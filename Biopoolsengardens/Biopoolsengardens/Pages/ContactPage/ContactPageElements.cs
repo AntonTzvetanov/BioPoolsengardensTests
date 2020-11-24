@@ -29,7 +29,7 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement TextArea => Driver.FindElement(By.Id("fields[540]"));
 
-        public IWebElement Submit => Driver.FindElement(By.Name("_origin"));
+        public IWebElement Submit => Wait.Until(d => d.FindElement(By.Name("_origin")));
 
         public IWebElement SocialMediaButton => Driver.FindElement(By.Id("element-151"));
 

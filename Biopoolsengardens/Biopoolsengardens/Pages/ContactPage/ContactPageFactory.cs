@@ -3,21 +3,17 @@
     public class ContactPageFill
     {
 
-        public static ContactPageFactory FillUser()
+        public static ContactPageFactory FillUser() => new ContactPageFactory
         {
-            return new ContactPageFactory
-            {
 
-                Name = "TonyCvetanov",
+            Name = "TonyCvetanov",
 
-                RealTelepfoneNumber = "922012431",
+            RealTelepfoneNumber = "922012431",
 
-                RealEmailAddress = "test@domain.com",
+            RealEmailAddress = "test@domain.com",
 
-                CommentBox = "test"
+            CommentBox = "test"
 
-            };
-
-        }
+        };
     }
 }
