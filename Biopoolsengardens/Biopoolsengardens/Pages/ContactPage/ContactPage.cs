@@ -95,7 +95,7 @@ namespace Biopoolsengardens.Pages
                 _contactPage.Submit.Click();
 
                 Assert.IsTrue(true, _contactPage.ErrorMessageForMissingEmailAddress.Text);
-                Assert.IsTrue( _contactPage.ErrorMessageForMissingEmailAddress.Displayed);
+                Assert.IsTrue(_contactPage.ErrorMessageForMissingEmailAddress.Displayed);
 
             }
 
@@ -119,9 +119,9 @@ namespace Biopoolsengardens.Pages
 
                 _user.RealTelepfoneNumber = "";
 
-               // _contactPage.FillForm(_user);
+                _contactPage.FillForm(_user);
 
-                 _contactPage.Submit.Click();
+                _contactPage.Submit.Click();
 
                 _contactPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
                 _contactPage.MakeApointmentAssert("Maak een afspraak");
@@ -151,9 +151,9 @@ namespace Biopoolsengardens.Pages
 
                 _user.Name = "";
 
-               // _contactPage.FillForm(_user);
+                _contactPage.FillForm(_user);
 
-               
+
                 _contactPage.Submit.Click();
 
                 _contactPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
@@ -200,11 +200,25 @@ namespace Biopoolsengardens.Pages
 
             }
 
-            public void TestSomething()
+            [Test]
+            public void ValidateErrorMessageWhenSkippingTheCommentBox()
             {
-                _driver.Navigate();
+                _contactPage.Navigate();
                 _contactPage.Maximize();
                 _contactPage.CookieButton.Click();
+                _contactPage.ContactPageButton.Click();
+
+                Actions action = new Actions(_driver);
+                action.MoveToElement(_contactPage.ShuttleElement).Perform();
+
+                _user.CommentBox = "";
+
+                _contactPage.FillForm(_user);
+                _contactPage.Submit.Click();
+
+                Assert.AreEqual(_contactPage.ErrorMessageForCommentBox.Text, "Dit veld is verplicht.");
+                Assert.IsTrue(_contactPage.ErrorMessageForCommentBox.Displayed);
+
             }
 
             [TearDown]

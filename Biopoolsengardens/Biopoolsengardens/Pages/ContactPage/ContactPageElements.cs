@@ -4,7 +4,8 @@ namespace Biopoolsengardens.Pages
 {
     public partial class ContactePageMethod : BasePage
     {
-        public ContactePageMethod(IWebDriver driver) : base(driver)
+        public ContactePageMethod(IWebDriver driver) 
+            : base(driver)
         {
         }
 
@@ -38,5 +39,7 @@ namespace Biopoolsengardens.Pages
         public IWebElement NivekoLinkToWebsite => Driver.FindElement(By.ClassName("FlexEmbed"));
 
         public IWebElement ErrorMessageForMissingEmailAddress => Driver.FindElement(By.Id("parsley-id-9"));
+
+        public IWebElement ErrorMessageForCommentBox => Driver.FindElement(By.Id("parsley-id-15"));
     }
 }
