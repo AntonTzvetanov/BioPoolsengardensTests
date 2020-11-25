@@ -8,7 +8,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 
-namespace Biopoolsengardens
+namespace Biopoolsengardens.BioPoolsPage
 {
     class PoolsPageGalery
     {
