@@ -5,6 +5,7 @@
 
     <IsPackable>false</IsPackable>
     <PublishCromeDriver>true</PublishCromeDriver>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>

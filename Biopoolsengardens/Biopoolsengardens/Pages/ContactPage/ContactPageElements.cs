@@ -29,10 +29,14 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement TextArea => Driver.FindElement(By.Id("fields[540]"));
 
-        public IWebElement Submit => Wait.Until(d => d.FindElement(By.Name("_origin")));
 
+        public IWebElement Submit => Wait.Until((e) => e.FindElement(By.XPath("//*[@id='grid_fb001a2d9a']/div[2]/div/div[2]/div/form/div[6]/div/div/button")));
+
+       
         public IWebElement SocialMediaButton => Driver.FindElement(By.Id("element-151"));
 
         public IWebElement NivekoLinkToWebsite => Driver.FindElement(By.ClassName("FlexEmbed"));
+
+        public IWebElement ErrorMessageForMissingEmailAddress => Driver.FindElement(By.Id("parsley-id-9"));
     }
 }

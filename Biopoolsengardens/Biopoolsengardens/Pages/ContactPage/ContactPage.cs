@@ -94,14 +94,8 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.Submit.Click();
 
-                _contactPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _contactPage.MakeApointmentAssert("Maak een afspraak");
-                _contactPage.BioPoolsAssertLink("Biozwembaden");
-                _contactPage.SwimmingPondsAssertLink("Zwemvijvers");
-                _contactPage.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _contactPage.SwimmingPoolsLink("Zwembaden");
-                _contactPage.RealizationLink("Realisaties");
-                _contactPage.ContactLink("Contact");
+                Assert.IsTrue(true, _contactPage.ErrorMessageForMissingEmailAddress.Text);
+                Assert.IsTrue( _contactPage.ErrorMessageForMissingEmailAddress.Displayed);
 
             }
 
