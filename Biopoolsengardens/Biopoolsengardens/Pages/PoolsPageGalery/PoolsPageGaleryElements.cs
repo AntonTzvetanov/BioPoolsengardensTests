@@ -33,5 +33,7 @@ namespace Biopoolsengardens.Pages.PoolsPageGalery
 
         public IWebElement CloseButton => Driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div[2]/div[1]/button[1]"));
 
+        public IWebElement TestButton => Driver.FindElement(By.Id("r"));
+
     }
 }

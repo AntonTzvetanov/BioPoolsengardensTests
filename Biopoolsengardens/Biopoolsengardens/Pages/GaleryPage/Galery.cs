@@ -56,7 +56,9 @@ namespace Biopoolsengardens
                 _galery.GaleryButton.Click();
 
                 Actions actions = new Actions(_driver);
-                actions.ClickAndHold(_galery.Pictures).Release().Perform();
+                actions.ClickAndHold(_galery.Pictures)
+                    .Release()
+                    .Perform();
 
                 for (int i = 0; i <= 28; i++)
                 {
