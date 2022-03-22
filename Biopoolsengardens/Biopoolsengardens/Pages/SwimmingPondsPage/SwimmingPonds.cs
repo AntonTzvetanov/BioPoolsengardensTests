@@ -1,13 +1,13 @@
-﻿using Biopoolsengardens.Pages;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 
-namespace Biopoolsengardens
+namespace Biopoolsengardens.Pages
 {
 
     [TestFixture]
@@ -24,22 +24,22 @@ namespace Biopoolsengardens
         {
 
 
-            //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            // _driver.Manage().Window.Maximize();
+            _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+             _driver.Manage().Window.Maximize();
 
 
-            ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+          //  ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-            options.AddArgument("--headless");
+          //  options.AddArgument("--headless");
 
 
-            _driver = new ChromeDriver(options);
+           // _driver = new ChromeDriver(options);
 
             _swimmingPonds = new SwimmingPondsMethod(_driver);
         }
 
         [Test]
-        [Retry(1)]
+      
 
         public void NavigateToSwimmingPondsPage()
         {
