@@ -85,7 +85,6 @@ namespace Biopoolsengardens.Pages
 
                 screenshot.SaveAsFile(fullPath + name + ".png", ScreenshotImageFormat.Png);
 
-
             }
             _driver.Quit();
 

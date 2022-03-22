@@ -28,8 +28,8 @@ namespace Biopoolsengardens.Pages
             public void TestInit()
             {
 
-
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                _contactPage.Maximize();
 
 
                 // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
@@ -49,11 +49,10 @@ namespace Biopoolsengardens.Pages
             {
                 _contactPage.Navigate();
 
-                _contactPage.Maximize();
-
                 _contactPage.CookieButton.Click();
 
                 _contactPage.ContactPageButton.Click();
+                
 
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
@@ -152,6 +151,7 @@ namespace Biopoolsengardens.Pages
                 _user.Name = "";
 
                 _contactPage.FillForm(_user);
+
 
 
                 _contactPage.Submit.Click();
