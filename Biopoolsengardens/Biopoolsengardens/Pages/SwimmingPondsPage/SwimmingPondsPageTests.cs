@@ -11,7 +11,7 @@ namespace Biopoolsengardens.Pages
 {
 
     [TestFixture]
-    public class Tests
+    public class TestsPoundPage
     {
 
         private IWebDriver _driver;
@@ -20,20 +20,21 @@ namespace Biopoolsengardens.Pages
 
         [SetUp]
 
-        public void TestInit()
+        public void TestInitialize()
         {
 
 
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
              _driver.Manage().Window.Maximize();
 
+            //- headlesss ChromeDriver
 
-          //  ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+            //  ChromeOptions options = new ChromeOptions();
 
-          //  options.AddArgument("--headless");
+            //  options.AddArgument("--headless");
 
 
-           // _driver = new ChromeDriver(options);
+             _driver = new ChromeDriver();
 
             _swimmingPonds = new SwimmingPondsMethod(_driver);
         }

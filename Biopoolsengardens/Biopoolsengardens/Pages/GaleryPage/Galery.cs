@@ -30,13 +30,14 @@ namespace Biopoolsengardens
                 new DriverManager().SetUpDriver(new ChromeConfig());
                  _driver = new ChromeDriver();
 
-                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+               // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-                options.AddArgument("--headless");
+               // options.AddArgument("--headless");
 
 
-                _driver = new ChromeDriver(options);
+                _driver = new ChromeDriver();
 
+               
             }
 
 
@@ -48,7 +49,6 @@ namespace Biopoolsengardens
                 _galery = new GaleryElements(_driver);
 
                 _galery.Navigate();
-
                 _galery.Maximize();
 
                 _galery.CookieButton.Click();

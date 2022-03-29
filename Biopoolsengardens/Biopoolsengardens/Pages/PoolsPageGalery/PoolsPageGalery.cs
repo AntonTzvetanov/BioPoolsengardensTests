@@ -28,15 +28,11 @@ namespace Biopoolsengardens.BioPoolsPage
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 _driver.Manage().Window.Maximize();
 
-
-                // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
-
-                // options.AddArgument("--headless");
-
-
-                // _driver = new ChromeDriver(options);
-
                 _poolsGalery = new PoolsPageGaleryElements(_driver);
+
+                _poolsGalery.Maximize();
+
+                _poolsGalery.Navigate();
             }
 
             [Test]
@@ -45,9 +41,6 @@ namespace Biopoolsengardens.BioPoolsPage
             public void NavigateToPoolsGalery()
             {
 
-                _poolsGalery.Maximize();
-
-                _poolsGalery.Navigate();
 
                 _poolsGalery.CookieButton.Click();
 
@@ -64,7 +57,7 @@ namespace Biopoolsengardens.BioPoolsPage
 
 
 
-                for (int i = 0; i < 40; i++)
+                for (int i = 0; i < 42; i++)
                 {
 
                     _poolsGalery.NextPuctureButton.Click();
