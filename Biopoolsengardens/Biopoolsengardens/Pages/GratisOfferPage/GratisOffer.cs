@@ -3,6 +3,7 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.IO;
+using System.Reflection;
 
 namespace Biopoolsengardens.Pages
 {
@@ -23,15 +24,8 @@ namespace Biopoolsengardens.Pages
 
             public void SetUp()
             {
-                //_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                // _driver.Manage().Window.Maximize();
-
-                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
-
-                options.AddArgument("--headless");
-
-
-                _driver = new ChromeDriver(options);
+                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                 _driver.Manage().Window.Maximize();
 
 
                 _driver.Manage().Window.Maximize();
@@ -40,6 +34,9 @@ namespace Biopoolsengardens.Pages
 
                 _offer = new GratisOfferSelectors(_driver);
 
+                _offer.Navigate();
+
+                _offer.Maximize();
             }
 
 
@@ -49,9 +46,6 @@ namespace Biopoolsengardens.Pages
             public void SendRequestForFreeOffer()
             {
 
-                _offer.Navigate();
-
-                _offer.Maximize();
 
                 _offer.CookieButton.Click();
 

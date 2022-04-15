@@ -30,23 +30,20 @@ namespace Biopoolsengardens.Pages
             //  _driver = new ChromeDriver(options);
 
             _poolsPage = new BioPoolsPageElements(_driver);
+
+            _poolsPage.Navigate();
+
+            _poolsPage.Maximize();
         }
 
         [Test]
         [Retry(1)]
         public void NavigatetoPoolsPage()
         {
-
-            _poolsPage.Navigate();
-
-            _poolsPage.Maximize();
-
-            _poolsPage.ArrowButton.Click();
-
+;
             _poolsPage.CookieButton.Click();
-
+            _poolsPage.ArrowButton.Click();
             _poolsPage.Example.Click();
-
 
             Actions actions = new Actions(_driver);
 

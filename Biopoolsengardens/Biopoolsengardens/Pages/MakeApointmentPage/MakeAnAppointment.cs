@@ -97,7 +97,6 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Subbmit.Click();
 
-
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
                 _apointment.MakeApointmentAssert("Maak een afspraak");
                 _apointment.BioPoolsAssertLink("Biozwembaden");
@@ -140,7 +139,6 @@ namespace Biopoolsengardens.Pages
                 _apointment.RealizationLink("Realisaties");
                 _apointment.ContactLink("Contact");
 
-
             }
 
             [Test]
@@ -165,7 +163,6 @@ namespace Biopoolsengardens.Pages
                 _apointment.Options.Click();
 
                 // _apointment.Subbmit.Click();
-
 
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
                 _apointment.MakeApointmentAssert("Maak een afspraak");
@@ -195,8 +192,6 @@ namespace Biopoolsengardens.Pages
 
                 _makeApointment.UserEmailAddress = "";
                 _apointment.FillApointment(_makeApointment);
-
-                
 
                 _apointment.Options.Click();
 
@@ -230,7 +225,7 @@ namespace Biopoolsengardens.Pages
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_apointment.ShuttleElement).Perform();
 
-               // _apointment.FillApointment(_makeApointment);
+                _apointment.FillApointment(_makeApointment);
 
                 _makeApointment.UserName = "";
 
@@ -238,7 +233,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Options.Click();
 
-                 _apointment.Subbmit.Click();
+               // _apointment.Subbmit.Click();
 
 
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
