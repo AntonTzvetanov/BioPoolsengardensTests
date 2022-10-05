@@ -34,10 +34,8 @@ namespace Biopoolsengardens
 
                // options.AddArgument("--headless");
 
-
                 _driver = new ChromeDriver();
 
-               
             }
 
 

@@ -9,8 +9,6 @@ namespace Biopoolsengardens.Pages
         {
         }
 
-
-
         public void Navigate()
         {
 

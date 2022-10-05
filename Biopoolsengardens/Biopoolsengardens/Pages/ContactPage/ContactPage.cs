@@ -22,7 +22,6 @@ namespace Biopoolsengardens.Pages
 
             private ContactePageMethod _contactPage;
 
-
             [SetUp]
 
             public void TestInit()
@@ -31,12 +30,11 @@ namespace Biopoolsengardens.Pages
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 _contactPage.Maximize();
 
+                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
 
-                // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
+                options.AddArgument("--headless");
 
-                //options.AddArgument("--headless");
-
-                // _driver = new ChromeDriver(options);
+                _driver = new ChromeDriver(options);
 
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
@@ -52,7 +50,7 @@ namespace Biopoolsengardens.Pages
                 _contactPage.CookieButton.Click();
 
                 _contactPage.ContactPageButton.Click();
-                
+
 
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
@@ -151,9 +149,6 @@ namespace Biopoolsengardens.Pages
                 _user.Name = "";
 
                 _contactPage.FillForm(_user);
-
-
-
                 _contactPage.Submit.Click();
 
                 _contactPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
