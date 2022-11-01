@@ -23,12 +23,6 @@ namespace Biopoolsengardens.Pages
         {
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 
-            // ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
-
-            //options.AddArgument("--headless");
-
-            //  _driver = new ChromeDriver(options);
-
             _poolsPage = new BioPoolsPageElements(_driver);
 
             _poolsPage.Navigate();

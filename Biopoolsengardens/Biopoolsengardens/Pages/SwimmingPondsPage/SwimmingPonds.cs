@@ -25,21 +25,12 @@ namespace Biopoolsengardens.Pages
 
 
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-             _driver.Manage().Window.Maximize();
-
-
-          //  ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
-
-          //  options.AddArgument("--headless");
-
-
-           // _driver = new ChromeDriver(options);
-
+            _driver.Manage().Window.Maximize();
             _swimmingPonds = new SwimmingPondsMethod(_driver);
         }
 
         [Test]
-      
+
 
         public void NavigateToSwimmingPondsPage()
         {
@@ -66,7 +57,7 @@ namespace Biopoolsengardens.Pages
             _swimmingPonds.RealizationLink("Realisaties");
             _swimmingPonds.ContactLink("Contact");
 
-          
+
         }
 
 
