@@ -29,15 +29,9 @@ namespace Biopoolsengardens.Pages
 
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
                 _contactPage.Maximize();
-
-                ChromeOptions options = new ChromeOptions(); //- headlesss ChromeDriver
-
-                options.AddArgument("--headless");
-
-                _driver = new ChromeDriver(options);
-
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
+               
             }
 
             [Test]
