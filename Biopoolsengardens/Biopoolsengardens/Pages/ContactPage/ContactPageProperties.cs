@@ -12,5 +12,7 @@
 
         public string CommentBox { get; set; }
 
+        public string  TestSmoethingForGit { get; set; }
+
     }
 }
