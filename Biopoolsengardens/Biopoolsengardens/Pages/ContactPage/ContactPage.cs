@@ -31,6 +31,7 @@ namespace Biopoolsengardens.Pages
                 _contactPage.Maximize();
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
+                
                
             }
 
