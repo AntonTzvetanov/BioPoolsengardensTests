@@ -36,9 +36,9 @@ namespace Biopoolsengardens.BioPoolsPage
             }
 
             [Test]
-            [Retry(1)]
+            
 
-            public void NavigateToPoolsGalery()
+            public void NavigateToPoolsGaleryAndVerifyThatAllPicturesAreDis()
             {
 
 
@@ -54,29 +54,19 @@ namespace Biopoolsengardens.BioPoolsPage
                 action.ClickAndHold(_poolsGalery.SelectPictures)
                     .Release()
                     .Perform();
-
-
-
                 for (int i = 0; i < 42; i++)
                 {
 
                     _poolsGalery.NextPuctureButton.Click();
                     Thread.Sleep(1000);
+                    Assert.That(true, _poolsGalery.SelectPictures.Selected.ToString(), Is.Ordered);
                 }
+
+                Assert.That(true, _poolsGalery.SelectPictures.Selected.ToString(), Is.All);
 
                 _poolsGalery.CloseButton.Click();
 
                 _poolsGalery.MoveUpArrowButton.Click();
-
-
-                _poolsGalery.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _poolsGalery.MakeApointmentAssert("Maak een afspraak");
-                _poolsGalery.BioPoolsAssertLink("Biozwembaden");
-                _poolsGalery.SwimmingPondsAssertLink("Zwemvijvers");
-                _poolsGalery.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _poolsGalery.SwimmingPoolsLink("Zwembaden");
-                _poolsGalery.RealizationLink("Realisaties");
-                _poolsGalery.ContactLink("Contact");
 
             }
 
@@ -97,7 +87,7 @@ namespace Biopoolsengardens.BioPoolsPage
                     screenshot.SaveAsFile(fullPath + name + ".png", ScreenshotImageFormat.Png);
 
                 }
-                _driver.Quit();
+                _driver.Close();
 
 
             }

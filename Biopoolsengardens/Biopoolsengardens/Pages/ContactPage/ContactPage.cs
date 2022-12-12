@@ -28,7 +28,7 @@ namespace Biopoolsengardens.Pages
             {
 
                 _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                _contactPage.Maximize();
+               
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
                 
@@ -81,6 +81,7 @@ namespace Biopoolsengardens.Pages
                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
 
                 _user.RealEmailAddress = "";
+                _user.Name = "";
 
                 _contactPage.FillForm(_user);
 
@@ -170,6 +171,7 @@ namespace Biopoolsengardens.Pages
 
                 if (tabs.Count > 1)
                 {
+                   // System.Console.WriteLine(_driver.SwitchTo().Window(tabs[1]).ToString());
                     _driver.SwitchTo().Window(tabs[1]);
                     _driver.Close();
                     _driver.SwitchTo().Window(tabs[0]);
@@ -180,6 +182,7 @@ namespace Biopoolsengardens.Pages
                 Assert.IsTrue(_contactPage.NivekoLinkToWebsite.Enabled);
                 Assert.IsTrue(_contactPage.SocialMediaButton.Displayed);
                 Assert.IsTrue(_contactPage.SocialMediaButton.Enabled);
+                Assert.IsTrue(_driver.FindElement(By.TagName("h1")).Displayed);
 
             }
 
