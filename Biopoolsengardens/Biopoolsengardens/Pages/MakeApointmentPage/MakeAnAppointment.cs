@@ -36,7 +36,6 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateAndMakeAppointment()
             {
-
                 _apointment.Navigate();
 
                 _apointment.Maximize();
@@ -52,17 +51,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Options.Click();
 
-                // _apointment.Subbmit.Click();
-
-
-                _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _apointment.MakeApointmentAssert("Maak een afspraak");
-                _apointment.BioPoolsAssertLink("Biozwembaden");
-                _apointment.SwimmingPondsAssertLink("Zwemvijvers");
-                _apointment.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _apointment.SwimmingPoolsLink("Zwembaden");
-                _apointment.RealizationLink("Realisaties");
-                _apointment.ContactLink("Contact");
+                _apointment.Subbmit.Click();
 
             }
 
@@ -120,7 +109,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Options.Click();
 
-                // _apointment.Subbmit.Click();
+                _apointment.Subbmit.Click();
 
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
                 _apointment.MakeApointmentAssert("Maak een afspraak");
@@ -154,7 +143,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Options.Click();
 
-                // _apointment.Subbmit.Click();
+                _apointment.Subbmit.Click();
 
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
                 _apointment.MakeApointmentAssert("Maak een afspraak");
@@ -187,7 +176,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Options.Click();
 
-                // _apointment.Subbmit.Click();
+                _apointment.Subbmit.Click();
 
 
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
@@ -225,7 +214,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Options.Click();
 
-               // _apointment.Subbmit.Click();
+                _apointment.Subbmit.Click();
 
 
                 _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
@@ -255,7 +244,7 @@ namespace Biopoolsengardens.Pages
                     screenshot.SaveAsFile(fullPath + name + ".png", ScreenshotImageFormat.Png);
 
                 }
-                _driver.Quit();
+                _driver.Close();
 
             }
         }
