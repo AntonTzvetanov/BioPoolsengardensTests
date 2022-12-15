@@ -58,6 +58,7 @@ namespace Biopoolsengardens.BioPoolsPage
 
                     _poolsGalery.NextPuctureButton.Click();
                     Thread.Sleep(1000);
+                    Assert.That(true, _poolsGalery.SelectPictures.Displayed.ToString(), Is.True);
                     Assert.That(true, _poolsGalery.SelectPictures.Selected.ToString(), Is.Ordered);
                 }
 
