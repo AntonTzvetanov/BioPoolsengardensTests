@@ -56,6 +56,7 @@ namespace Biopoolsengardens.Pages
             }
 
             [Test]
+            [Retry (1)]
 
             public void NavigateAndMakeAppointmentWithoutFirstName()
             {
@@ -78,14 +79,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Subbmit.Click();
 
-                _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _apointment.MakeApointmentAssert("Maak een afspraak");
-                _apointment.BioPoolsAssertLink("Biozwembaden");
-                _apointment.SwimmingPondsAssertLink("Zwemvijvers");
-                _apointment.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _apointment.SwimmingPoolsLink("Zwembaden");
-                _apointment.RealizationLink("Realisaties");
-                _apointment.ContactLink("Contact");
+                
 
             }
 
@@ -111,15 +105,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Subbmit.Click();
 
-                _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _apointment.MakeApointmentAssert("Maak een afspraak");
-                _apointment.BioPoolsAssertLink("Biozwembaden");
-                _apointment.SwimmingPondsAssertLink("Zwemvijvers");
-                _apointment.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _apointment.SwimmingPoolsLink("Zwembaden");
-                _apointment.RealizationLink("Realisaties");
-                _apointment.ContactLink("Contact");
-
+               
             }
 
             [Test]
@@ -145,14 +131,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Subbmit.Click();
 
-                _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _apointment.MakeApointmentAssert("Maak een afspraak");
-                _apointment.BioPoolsAssertLink("Biozwembaden");
-                _apointment.SwimmingPondsAssertLink("Zwemvijvers");
-                _apointment.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _apointment.SwimmingPoolsLink("Zwembaden");
-                _apointment.RealizationLink("Realisaties");
-                _apointment.ContactLink("Contact");
+                
 
             }
 
@@ -178,15 +157,6 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Subbmit.Click();
 
-
-                _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _apointment.MakeApointmentAssert("Maak een afspraak");
-                _apointment.BioPoolsAssertLink("Biozwembaden");
-                _apointment.SwimmingPondsAssertLink("Zwemvijvers");
-                _apointment.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _apointment.SwimmingPoolsLink("Zwembaden");
-                _apointment.RealizationLink("Realisaties");
-                _apointment.ContactLink("Contact");
 
             }
 
@@ -216,15 +186,6 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Subbmit.Click();
 
-
-                _apointment.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _apointment.MakeApointmentAssert("Maak een afspraak");
-                _apointment.BioPoolsAssertLink("Biozwembaden");
-                _apointment.SwimmingPondsAssertLink("Zwemvijvers");
-                _apointment.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _apointment.SwimmingPoolsLink("Zwembaden");
-                _apointment.RealizationLink("Realisaties");
-                _apointment.ContactLink("Contact");
 
             }
 
