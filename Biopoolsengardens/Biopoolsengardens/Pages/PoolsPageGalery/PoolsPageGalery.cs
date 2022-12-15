@@ -36,15 +36,14 @@ namespace Biopoolsengardens.BioPoolsPage
             }
 
             [Test]
-            
 
-            public void NavigateToPoolsGaleryAndVerifyThatAllPicturesAreDis()
+
+            public void NavigateToPoolsGaleryAndVerifyThatAllPicturesAreDisplayed()
             {
-
-
                 _poolsGalery.CookieButton.Click();
 
                 _poolsGalery.PoolsButton.Click();
+                Assert.IsTrue(true, _poolsGalery.PoolsPageCenterPicture.Enabled.ToString(), Is.True);
 
                 Actions action = new Actions(_driver);
                 action.MoveToElement(_poolsGalery.SocialLinksGrid)
@@ -63,11 +62,9 @@ namespace Biopoolsengardens.BioPoolsPage
                 }
 
                 Assert.That(true, _poolsGalery.SelectPictures.Selected.ToString(), Is.All);
-
                 _poolsGalery.CloseButton.Click();
-
                 _poolsGalery.MoveUpArrowButton.Click();
-
+                
             }
 
 
@@ -88,10 +85,7 @@ namespace Biopoolsengardens.BioPoolsPage
 
                 }
                 _driver.Close();
-
-
             }
-
 
         }
 
