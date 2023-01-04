@@ -71,15 +71,12 @@ namespace Biopoolsengardens.Pages
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_apointment.ShuttleElement).Perform();
 
-                _apointment.FillApointment(_makeApointment);
-
                 _makeApointment.UserName = "";
+                _apointment.FillApointment(_makeApointment);
 
                 _apointment.Options.Click();
 
                 _apointment.Subbmit.Click();
-
-                
 
             }
 
@@ -130,8 +127,6 @@ namespace Biopoolsengardens.Pages
                 _apointment.Options.Click();
 
                 _apointment.Subbmit.Click();
-
-                
 
             }
 
