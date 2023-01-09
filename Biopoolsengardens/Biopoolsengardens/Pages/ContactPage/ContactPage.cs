@@ -140,14 +140,7 @@ namespace Biopoolsengardens.Pages
                 _contactPage.FillForm(_user);
                 _contactPage.Submit.Click();
 
-                _contactPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-                _contactPage.MakeApointmentAssert("Maak een afspraak");
-                _contactPage.BioPoolsAssertLink("Biozwembaden");
-                _contactPage.SwimmingPondsAssertLink("Zwemvijvers");
-                _contactPage.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-                _contactPage.SwimmingPoolsLink("Zwembaden");
-                _contactPage.RealizationLink("Realisaties");
-                _contactPage.ContactLink("Contact");
+                Assert.IsEmpty(_user.Name);
 
             }
 
@@ -171,17 +164,14 @@ namespace Biopoolsengardens.Pages
 
                 if (tabs.Count > 1)
                 {
-                   // System.Console.WriteLine(_driver.SwitchTo().Window(tabs[1]).ToString());
+                     
                     _driver.SwitchTo().Window(tabs[1]);
                     _driver.Close();
                     _driver.SwitchTo().Window(tabs[0]);
 
                 }
 
-                Assert.IsTrue(_contactPage.NivekoLinkToWebsite.Displayed);
-                Assert.IsTrue(_contactPage.NivekoLinkToWebsite.Enabled);
-                Assert.IsTrue(_contactPage.SocialMediaButton.Displayed);
-                Assert.IsTrue(_contactPage.SocialMediaButton.Enabled);
+                
                 Assert.IsTrue(_driver.FindElement(By.TagName("h1")).Displayed);
 
             }

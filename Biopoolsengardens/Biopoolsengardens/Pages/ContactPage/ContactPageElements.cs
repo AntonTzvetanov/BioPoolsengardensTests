@@ -7,6 +7,7 @@ namespace Biopoolsengardens.Pages
         public ContactePageMethod(IWebDriver driver) 
             : base(driver)
         {
+            
         }
 
         public void Navigate()
