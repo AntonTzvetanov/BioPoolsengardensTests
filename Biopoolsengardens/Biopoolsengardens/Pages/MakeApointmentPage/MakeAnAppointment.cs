@@ -56,7 +56,7 @@ namespace Biopoolsengardens.Pages
             }
 
             [Test]
-            [Retry (1)]
+            [Retry(1)]
 
             public void NavigateAndMakeAppointmentWithoutFirstName()
             {
@@ -102,7 +102,7 @@ namespace Biopoolsengardens.Pages
 
                 _apointment.Subbmit.Click();
 
-               
+
             }
 
             [Test]

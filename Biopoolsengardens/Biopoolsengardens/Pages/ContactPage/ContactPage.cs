@@ -32,11 +32,10 @@ namespace Biopoolsengardens.Pages
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
                 
-               
             }
 
             [Test]
-            [Retry(1)]
+            
 
             public void NavigateToContactPageAndFillTheForm()
             {
