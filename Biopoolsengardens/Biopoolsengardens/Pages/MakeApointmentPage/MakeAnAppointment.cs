@@ -32,8 +32,6 @@ namespace Biopoolsengardens.Pages
 
 
             [Test]
-            [Retry(1)]
-
             public void NavigateAndMakeAppointment()
             {
                 _apointment.Navigate();
@@ -56,8 +54,6 @@ namespace Biopoolsengardens.Pages
             }
 
             [Test]
-            [Retry(1)]
-
             public void NavigateAndMakeAppointmentWithoutFirstName()
             {
                 _apointment.Navigate();
@@ -77,6 +73,8 @@ namespace Biopoolsengardens.Pages
                 _apointment.Options.Click();
 
                 _apointment.Subbmit.Click();
+
+                Assert.That(_makeApointment.UserName, Is.Empty);
 
             }
 

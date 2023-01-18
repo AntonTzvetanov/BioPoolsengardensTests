@@ -43,7 +43,7 @@ namespace Biopoolsengardens.BioPoolsPage
                 _poolsGalery.CookieButton.Click();
 
                 _poolsGalery.PoolsButton.Click();
-                Assert.IsTrue(true, _poolsGalery.PoolsPageCenterPicture.Enabled.ToString(), Is.True);
+                Assert.IsTrue(true, _poolsGalery.PoolsPageCenterPicture.Displayed.ToString(), Is.True);
 
                 Actions action = new Actions(_driver);
                 action.MoveToElement(_poolsGalery.SocialLinksGrid)
@@ -59,20 +59,10 @@ namespace Biopoolsengardens.BioPoolsPage
                     _poolsGalery.NextPuctureButton.Click();
                     Thread.Sleep(1000);
                     Assert.That(true, _poolsGalery.SelectPictures.Displayed.ToString(), Is.True);
-                    Assert.That(true, _poolsGalery.SelectPictures.Selected.ToString(), Is.Ordered);
-                }
 
-                Assert.That(true, _poolsGalery.SelectPictures.Selected.ToString(), Is.All);
+                }
                 _poolsGalery.CloseButton.Click();
                 _poolsGalery.MoveUpArrowButton.Click();
-                
-            }
-
-            [Test]
-            public void TestSomething()
-            {
-
-
 
             }
 

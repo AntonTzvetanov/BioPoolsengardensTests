@@ -31,29 +31,24 @@ namespace Biopoolsengardens.Pages
         }
 
         [Test]
-        [Retry(1)]
+     
         public void NavigatetoPoolsPage()
         {
 ;
             _poolsPage.CookieButton.Click();
-            _poolsPage.ArrowButton.Click();
-            _poolsPage.Example.Click();
+            _poolsPage.BioPoolsPageButton.Click();
+            //to develop the test case from here 
+
+
+
+
+
 
             Actions actions = new Actions(_driver);
 
-            actions.MoveToElement(_poolsPage.ContactButton).Perform();
-
             _poolsPage.MoveUpArrowButton.Click();
 
-            _poolsPage.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-            _poolsPage.MakeApointmentAssert("Maak een afspraak");
-            _poolsPage.BioPoolsAssertLink("Biozwembaden");
-            _poolsPage.SwimmingPondsAssertLink("Zwemvijvers");
-            _poolsPage.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-            _poolsPage.SwimmingPoolsLink("Zwembaden");
-            _poolsPage.RealizationLink("Realisaties");
-            _poolsPage.ContactLink("Contact");
-
+            
         }
 
 

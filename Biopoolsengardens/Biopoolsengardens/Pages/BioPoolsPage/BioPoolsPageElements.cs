@@ -17,9 +17,6 @@ namespace Biopoolsengardens.BioPoolsPage
 
         public IWebElement ArrowButton => Driver.FindElement(By.Id("element-283"));
 
-        public IWebElement Example => Wait.Until((d) => d.FindElement(By.ClassName("Nav-itemTarget EntityTrigger-772-0-2 custom-style-navigation-item custom-style-navigation-item-active")));
-
-        public IWebElement ContactButton => Driver.FindElement(By.ClassName("Button EntityTrigger-159 custom-style-button"));
-
+        public IWebElement BioPoolsPageButton => Driver.FindElement(By.XPath("/html/body/div[1]/div/section[1]/div/div/div[2]/div/div/div/div[3]/div[1]/ul/li[2]/a"));
     }
 }
