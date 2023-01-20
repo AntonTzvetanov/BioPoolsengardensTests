@@ -32,24 +32,27 @@ namespace Biopoolsengardens.Pages
 
         [Test]
      
-        public void NavigatetoPoolsPage()
+        public void NavigatetoPoolsPageAndVerifyThatHeaderTextIsDisplayed()
         {
-;
             _poolsPage.CookieButton.Click();
             _poolsPage.BioPoolsPageButton.Click();
-            //to develop the test case from here 
+            Assert.That(_poolsPage.BiopoolsInfoTextHeader.Displayed);
+            Assert.That(_poolsPage.BiopoolsInfoTextHeader.Text.ToString().Contains("Biozwembaden"));
 
+        }
 
+        [Test]
+        public void VerifyBiopoolsInfoIsDisplayed()
+        {
+            _poolsPage.CookieButton.Click();
+            _poolsPage.BioPoolsPageButton.Click();
+            
+            Assert.That(_poolsPage.BiopoolsInfoText.Displayed);
 
-
-
-
-            Actions actions = new Actions(_driver);
-
-            _poolsPage.MoveUpArrowButton.Click();
-
+            Assert.That(_poolsPage.BioPoolsPageButton.Displayed);
             
         }
+
 
 
         [TearDown]
