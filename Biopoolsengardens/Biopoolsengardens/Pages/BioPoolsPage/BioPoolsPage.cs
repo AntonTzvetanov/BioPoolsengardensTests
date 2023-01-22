@@ -4,7 +4,6 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using System;
 using System.IO;
 using System.Reflection;
 
@@ -17,8 +16,6 @@ namespace Biopoolsengardens.Pages
 
         private IWebDriver _driver;
         private BioPoolsPageElements _poolsPage;
-
-
 
         [SetUp]
         public void Setup()
@@ -54,8 +51,6 @@ namespace Biopoolsengardens.Pages
             Assert.That(_poolsPage.BioPoolsPageButton.Displayed);
 
         }
-
-
 
         [Test]
 
