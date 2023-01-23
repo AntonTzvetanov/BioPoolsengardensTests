@@ -17,7 +17,6 @@ namespace Biopoolsengardens.Pages
         private IWebDriver _driver;
         private BioPoolsPageElements _poolsPage;
 
-
         [SetUp]
         public void Setup()
         {
@@ -31,7 +30,7 @@ namespace Biopoolsengardens.Pages
         }
 
         [Test]
-     
+
         public void NavigatetoPoolsPageAndVerifyThatHeaderTextIsDisplayed()
         {
             _poolsPage.CookieButton.Click();
@@ -46,13 +45,43 @@ namespace Biopoolsengardens.Pages
         {
             _poolsPage.CookieButton.Click();
             _poolsPage.BioPoolsPageButton.Click();
-            
+
             Assert.That(_poolsPage.BiopoolsInfoText.Displayed);
 
             Assert.That(_poolsPage.BioPoolsPageButton.Displayed);
-            
+
         }
 
+        [Test]
+
+        public void VerifyContactPageLinkFromBiopoolsPage()
+        {
+            _poolsPage.CookieButton.Click();
+            _poolsPage.BioPoolsPageButton.Click();
+            Actions action = new Actions(_driver);
+            action.ClickAndHold(_poolsPage.ThirdArrowDown).
+                Release().
+                Perform();
+            _poolsPage.LinkToContactPage.Click();
+            string URL = _driver.Url;
+            Assert.AreEqual(URL, "https://www.biopoolsengardens.be/nl/contact");
+
+        }
+
+
+        [Test]
+
+        public void VerifyShugarValeyIsDisplayed()
+        {
+            _poolsPage.CookieButton.Click();
+            _poolsPage.BioPoolsPageButton.Click();
+            Actions action = new Actions(_driver);
+            action.ClickAndHold(_poolsPage.ThirdArrowDown).
+                Release().
+                Perform();
+            Assert.That(_poolsPage.SugarValeyElement.Displayed);
+
+        }
 
 
         [TearDown]

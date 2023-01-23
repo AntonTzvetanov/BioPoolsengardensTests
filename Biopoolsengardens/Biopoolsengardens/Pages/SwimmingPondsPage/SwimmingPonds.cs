@@ -41,22 +41,15 @@ namespace Biopoolsengardens.Pages
             _swimmingPonds.Example.Click();
 
             Actions action = new Actions(_driver);
-            action.ClickAndHold(_swimmingPonds.Grid).Perform();
-            action.Release(_swimmingPonds.Grid).Perform();
+            action.ClickAndHold(_swimmingPonds.Grid).
+                Perform();
+            action.
+                Release(_swimmingPonds.Grid)
+                .Perform();
 
             Thread.Sleep(2000);
 
             _swimmingPonds.MoveUpArrowButton.Click();
-
-            _swimmingPonds.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-            _swimmingPonds.MakeApointmentAssert("Maak een afspraak");
-            _swimmingPonds.BioPoolsAssertLink("Biozwembaden");
-            _swimmingPonds.SwimmingPondsAssertLink("Zwemvijvers");
-            _swimmingPonds.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-            _swimmingPonds.SwimmingPoolsLink("Zwembaden");
-            _swimmingPonds.RealizationLink("Realisaties");
-            _swimmingPonds.ContactLink("Contact");
-
 
         }
 

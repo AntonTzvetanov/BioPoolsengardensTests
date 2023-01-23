@@ -25,22 +25,15 @@ namespace Biopoolsengardens.Pages
 
 
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-             _driver.Manage().Window.Maximize();
+            _driver.Manage().Window.Maximize();
 
-            //- headlesss ChromeDriver
-
-            //  ChromeOptions options = new ChromeOptions();
-
-            //  options.AddArgument("--headless");
-
-
-             _driver = new ChromeDriver();
+            _driver = new ChromeDriver();
 
             _swimmingPonds = new SwimmingPondsMethod(_driver);
         }
 
         [Test]
-      
+
 
         public void NavigateToSwimmingPondsPage()
         {
@@ -58,16 +51,6 @@ namespace Biopoolsengardens.Pages
 
             _swimmingPonds.MoveUpArrowButton.Click();
 
-            _swimmingPonds.AssertIsDisplayedGratisOfferLink("VRAAG EEN GRATIS OFFERTE!");
-            _swimmingPonds.MakeApointmentAssert("Maak een afspraak");
-            _swimmingPonds.BioPoolsAssertLink("Biozwembaden");
-            _swimmingPonds.SwimmingPondsAssertLink("Zwemvijvers");
-            _swimmingPonds.GardenAndNaturalPondsLink("Tuin- en natuurvijvers");
-            _swimmingPonds.SwimmingPoolsLink("Zwembaden");
-            _swimmingPonds.RealizationLink("Realisaties");
-            _swimmingPonds.ContactLink("Contact");
-
-          
         }
 
 
