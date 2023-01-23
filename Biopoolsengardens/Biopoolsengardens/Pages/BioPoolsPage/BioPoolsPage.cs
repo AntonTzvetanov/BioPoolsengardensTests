@@ -69,6 +69,21 @@ namespace Biopoolsengardens.Pages
         }
 
 
+        [Test]
+
+        public void VerifyShugarValeyIsDisplayed()
+        {
+            _poolsPage.CookieButton.Click();
+            _poolsPage.BioPoolsPageButton.Click();
+            Actions action = new Actions(_driver);
+            action.ClickAndHold(_poolsPage.ThirdArrowDown).
+                Release().
+                Perform();
+            Assert.That(_poolsPage.SugarValeyElement.Displayed);
+
+        }
+
+
         [TearDown]
         public void TearDown()
         {
