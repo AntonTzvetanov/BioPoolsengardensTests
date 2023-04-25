@@ -4,6 +4,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.IO;
 using System.Reflection;
+using WebDriverManager.DriverConfigs.Impl;
+using WebDriverManager;
 
 namespace Biopoolsengardens.Pages
 {
@@ -24,12 +26,9 @@ namespace Biopoolsengardens.Pages
 
             public void SetUp()
             {
-                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                 _driver.Manage().Window.Maximize();
-
-
-                _driver.Manage().Window.Maximize();
-
+              
+                _driver = new ChromeDriver();
+                
                 _fillOffer = GratisOffer.FillUser();
 
                 _offer = new GratisOfferSelectors(_driver);
@@ -46,7 +45,6 @@ namespace Biopoolsengardens.Pages
             public void SendRequestForFreeOffer()
             {
 
-
                 _offer.CookieButton.Click();
 
                 _offer.ShuttleButton.Click();
@@ -56,7 +54,6 @@ namespace Biopoolsengardens.Pages
                 _offer.InterestButton.Click();
 
                 _offer.SubbmitButton.Click();
-
                 
             }
 
@@ -81,7 +78,7 @@ namespace Biopoolsengardens.Pages
 
                 // _offer.SubbmitButton.Click();
 
-               
+
 
             }
 

@@ -25,7 +25,7 @@ namespace Biopoolsengardens.BioPoolsPage
 
             public void SetUp()
             {
-                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                _driver = new ChromeDriver();
                 _driver.Manage().Window.Maximize();
 
                 _poolsGalery = new PoolsPageGaleryElements(_driver);

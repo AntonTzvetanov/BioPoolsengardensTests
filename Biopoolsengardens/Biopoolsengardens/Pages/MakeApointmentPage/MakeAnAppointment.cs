@@ -25,7 +25,7 @@ namespace Biopoolsengardens.Pages
 
             public void SetUp()
             {
-                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                _driver = new ChromeDriver();
                 _makeApointment = MakeAppointmentUserFactory.User();
                 _apointment = new MakeApointmentElements(_driver);
             }

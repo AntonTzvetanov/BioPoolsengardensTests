@@ -27,8 +27,7 @@ namespace Biopoolsengardens.Pages
             public void TestInit()
             {
 
-                _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-               
+                _driver = new ChromeDriver();
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
                 

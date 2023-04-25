@@ -29,8 +29,8 @@ namespace Biopoolsengardens
 
                 new DriverManager().SetUpDriver(new ChromeConfig());
                 _driver = new ChromeDriver();
-                _galery.Navigate();
-                _galery.Maximize();
+                _driver.Navigate();
+               // _galery.Maximize();
 
             }
 

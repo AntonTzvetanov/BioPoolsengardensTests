@@ -22,9 +22,7 @@ namespace Biopoolsengardens.Pages
 
         public void TestInit()
         {
-
-
-            _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            _driver = new ChromeDriver();
             _driver.Manage().Window.Maximize();
             _swimmingPonds = new SwimmingPondsMethod(_driver);
         }
