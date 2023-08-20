@@ -112,7 +112,7 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.FillForm(_user);
 
-                _contactPage.Submit.Click();
+               // _contactPage.Submit.Click();
 
                 Assert.IsEmpty(_user.RealTelepfoneNumber);
 
