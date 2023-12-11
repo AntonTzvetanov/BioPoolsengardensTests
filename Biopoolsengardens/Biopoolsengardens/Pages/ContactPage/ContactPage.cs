@@ -4,6 +4,7 @@ using NUnit.Framework.Internal;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Threading;
@@ -188,21 +189,36 @@ namespace Biopoolsengardens.Pages
             [TearDown]
             public void TearDown()
             {
-                var name = TestContext.CurrentContext.Test.Name;
-                var result = TestContext.CurrentContext.Result.Outcome;
-
-                if (result != ResultState.Success)
+                try
                 {
-                    var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
-                    var directory = Directory.GetCurrentDirectory();
+                    if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+                    {
+                        // Capture screenshot
+                        var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
 
-                    var fullPath = Path.GetFullPath("..\\..\\..\\Screenshots");
+                        // Save screenshot to a file
+                        string screenshotPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Screenshots");
+                        Directory.CreateDirectory(screenshotPath);
 
-                    screenshot.SaveAsFile(fullPath + name + ".png", ScreenshotImageFormat.Png);
+                        string screenshotFileName = $"{TestContext.CurrentContext.Test.Name}_{DateTime.Now:yyyyMMdd_HHmmss}.png";
+                        string screenshotFilePath = Path.Combine(screenshotPath, screenshotFileName);
 
+                        // Log the screenshot file path or perform any additional actions
+                        Console.WriteLine($"Screenshot saved: {screenshotFilePath}");
+                    }
                 }
-                _driver.Quit();
-
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error in TearDown method: {ex.Message}");
+                }
+                finally
+                {
+                    // Close the WebDriver instance
+                    if (_driver != null)
+                    {
+                        _driver.Close();
+                    }
+                }
             }
 
         }
