@@ -11,12 +11,9 @@ namespace Biopoolsengardens.Pages
 
         }
 
-
         public void Navigate()
         {
-
             Driver.Url = "https://www.biopoolsengardens.be/nl";
-
         }
 
         public IWebElement GaleryButton => Driver.FindElement(By.LinkText("Realisaties"));
@@ -24,13 +21,5 @@ namespace Biopoolsengardens.Pages
         public IWebElement Pictures => Driver.FindElement(By.Id("element-497"));
 
         public IWebElement NextPictureButton => Driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div[2]/button[2]"));
-
-        public IWebElement Test => Driver.FindElement(By.Id(""));
-
-        
-
-
-
-
     }
 }

@@ -4,7 +4,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System.IO;
-using System.Reflection;
 using System.Threading;
 
 namespace Biopoolsengardens.Pages
@@ -32,23 +31,16 @@ namespace Biopoolsengardens.Pages
 
         public void NavigateToSwimmingPondsPage()
         {
-
             _swimmingPonds.Navigate();
             _swimmingPonds.CookieButton.Click();
-
             _swimmingPonds.Example.Click();
-
             Actions action = new Actions(_driver);
             action.ClickAndHold(_swimmingPonds.Grid).
                 Perform();
-            action.
-                Release(_swimmingPonds.Grid)
+            action.Release(_swimmingPonds.Grid)
                 .Perform();
-
             Thread.Sleep(2000);
-
             _swimmingPonds.MoveUpArrowButton.Click();
-
         }
 
 
@@ -69,7 +61,7 @@ namespace Biopoolsengardens.Pages
 
 
             }
-            _driver.Quit();
+            _driver.Close();
 
         }
 

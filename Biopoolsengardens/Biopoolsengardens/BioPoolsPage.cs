@@ -5,7 +5,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System.IO;
-using System.Reflection;
 
 namespace Biopoolsengardens
 {
@@ -100,9 +99,7 @@ namespace Biopoolsengardens
                 screenshot.SaveAsFile(fullPath + name + ".png", ScreenshotImageFormat.Png);
 
             }
-            _driver.Quit();
-
-
+            _driver.Close();
 
         }
     }

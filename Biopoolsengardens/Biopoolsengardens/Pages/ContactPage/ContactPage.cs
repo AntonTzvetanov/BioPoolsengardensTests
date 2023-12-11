@@ -177,7 +177,7 @@ namespace Biopoolsengardens.Pages
 
                 _user.CommentBox = "";
 
-                //_contactPage.FillForm(_user);
+                _contactPage.FillForm(_user);
                 _contactPage.Submit.Click();
 
                 Assert.AreEqual(_contactPage.ErrorMessageForCommentBox.Text, "Dit veld is verplicht.");

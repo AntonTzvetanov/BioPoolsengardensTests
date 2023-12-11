@@ -4,12 +4,12 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using System;
 using System.IO;
 using System.Threading;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
 
-namespace Biopoolsengardens
+
+namespace Biopoolsengardens.Pages
 {
     class Galery
     {
@@ -17,20 +17,18 @@ namespace Biopoolsengardens
 
         public class NavigateToGalery
         {
-
             private IWebDriver _driver;
-
             private GaleryElements _galery;
 
             [SetUp]
 
             public void SetUp()
             {
-
                 _driver = new ChromeDriver();
-                _driver.Navigate();
-                _galery.Maximize();
-
+                //to be fixed 
+                _driver.Navigate().GoToUrl("https://www.biopoolsengardens.be/nl");
+                _driver.Manage().Window.FullScreen();
+                _galery = new GaleryElements(_driver);
             }
 
 
@@ -39,24 +37,18 @@ namespace Biopoolsengardens
 
             public void NavigateGalery()
             {
-                _galery = new GaleryElements(_driver);
-
+              
                 _galery.CookieButton.Click();
-
                 _galery.GaleryButton.Click();
 
                 Actions actions = new Actions(_driver);
-                actions.ClickAndHold(_galery.Pictures)
-                    .Release()
-                    .Perform();
-                
-                   
-
-                for (int i = 0; i <= 28; i++)
+                actions.ClickAndHold(_galery.Pictures).Release().Perform();
+                for (int i = 0; i <= 34; i++)
                 {
                     _galery.NextPictureButton.Click();
 
                     Thread.Sleep(1000);
+                    Assert.IsTrue(_galery.Pictures.Displayed);
                 }
 
                 _galery.MoveUpArrowButton.Click();
@@ -66,23 +58,37 @@ namespace Biopoolsengardens
             [TearDown]
             public void TearDown()
             {
-                var name = TestContext.CurrentContext.Test.Name;
-                var result = TestContext.CurrentContext.Result.Outcome;
-
-                if (result != ResultState.Success)
+                try
                 {
-                    var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
-                    var directory = Directory.GetCurrentDirectory();
+                    if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+                    {
+                        // Capture screenshot
+                        var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
 
-                    var fullPath = Path.GetFullPath("..\\..\\..\\Screenshots");
+                        // Save screenshot to a file
+                        string screenshotPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Screenshots");
+                        Directory.CreateDirectory(screenshotPath);
 
-                    screenshot.SaveAsFile(fullPath + name + ".png", ScreenshotImageFormat.Png);
+                        string screenshotFileName = $"{TestContext.CurrentContext.Test.Name}_{DateTime.Now:yyyyMMdd_HHmmss}.png";
+                        string screenshotFilePath = Path.Combine(screenshotPath, screenshotFileName);
 
+                        // Log the screenshot file path or perform any additional actions
+                        Console.WriteLine($"Screenshot saved: {screenshotFilePath}");
+                    }
                 }
-                _driver.Quit();
-
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error in TearDown method: {ex.Message}");
+                }
+                finally
+                {
+                    // Close the WebDriver instance
+                    if (_driver != null)
+                    {
+                        _driver.Close();
+                    }
+                }
             }
-
         }
 
 
