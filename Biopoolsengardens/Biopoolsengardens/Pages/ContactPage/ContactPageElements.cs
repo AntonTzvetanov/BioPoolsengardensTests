@@ -4,10 +4,10 @@ namespace Biopoolsengardens.Pages
 {
     public partial class ContactePageMethod : BasePage
     {
-        public ContactePageMethod(IWebDriver driver) 
+        public ContactePageMethod(IWebDriver driver)
             : base(driver)
         {
-            
+
         }
 
         public void Navigate()
@@ -32,7 +32,7 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement Submit => Wait.Until((e) => e.FindElement(By.ClassName("Form-controls")));
 
-       
+
         public IWebElement SocialMediaButton => Driver.FindElement(By.Id("element-151"));
 
         public IWebElement NivekoLinkToWebsite => Driver.FindElement(By.ClassName("FlexEmbed"));

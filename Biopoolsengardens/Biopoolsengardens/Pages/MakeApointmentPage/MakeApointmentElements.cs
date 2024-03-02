@@ -18,12 +18,7 @@ namespace Biopoolsengardens.Pages
 
         }
 
-
-
-        public void AssertHref(string expected)
-        {
-            Assert.AreEqual(expected, "");
-        }
+        public void AssertHref(string expected) => Assert.AreEqual(expected, "");
 
         public IWebElement OfferButton => Driver.FindElement(By.Id("element-773"));
 

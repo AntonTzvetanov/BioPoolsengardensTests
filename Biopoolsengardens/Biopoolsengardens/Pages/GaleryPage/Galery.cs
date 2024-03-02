@@ -1,5 +1,4 @@
-﻿using Biopoolsengardens.Pages;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -37,7 +36,7 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateGalery()
             {
-              
+
                 _galery.CookieButton.Click();
                 _galery.GaleryButton.Click();
 

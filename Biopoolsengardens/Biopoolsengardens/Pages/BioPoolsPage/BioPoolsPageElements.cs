@@ -4,7 +4,7 @@ namespace Biopoolsengardens.BioPoolsPage
 {
     class BioPoolsPageElements : BasePage
     {
-        public BioPoolsPageElements(IWebDriver driver) 
+        public BioPoolsPageElements(IWebDriver driver)
         : base(driver)
         {
         }

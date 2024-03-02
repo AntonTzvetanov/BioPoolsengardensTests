@@ -6,7 +6,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.IO;
-using System.Reflection;
 using System.Threading;
 
 namespace Biopoolsengardens.BioPoolsPage

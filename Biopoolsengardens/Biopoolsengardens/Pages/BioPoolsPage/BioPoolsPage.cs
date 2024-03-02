@@ -6,7 +6,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.IO;
-using System.Reflection;
 
 namespace Biopoolsengardens.Pages
 {
@@ -93,7 +92,7 @@ namespace Biopoolsengardens.Pages
                 if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
                 {
                     // Capture screenshot
-                    var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
+                    var screenshot = (NewMethod()).GetScreenshot();
 
                     // Save screenshot to a file
                     string screenshotPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Screenshots");
@@ -118,6 +117,11 @@ namespace Biopoolsengardens.Pages
                     _driver.Close();
                 }
             }
+        }
+
+        private ITakesScreenshot NewMethod()
+        {
+            return (ITakesScreenshot)_driver;
         }
     }
 }

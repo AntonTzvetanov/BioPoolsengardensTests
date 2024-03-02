@@ -5,7 +5,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.IO;
-using System.Reflection;
 
 namespace Biopoolsengardens.Pages
 {
@@ -179,7 +178,6 @@ namespace Biopoolsengardens.Pages
                 _apointment.Options.Click();
 
                 _apointment.Subbmit.Click();
-
 
             }
 

@@ -6,7 +6,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.IO;
-using System.Reflection;
 using System.Threading;
 
 namespace Biopoolsengardens.Pages
@@ -31,11 +30,11 @@ namespace Biopoolsengardens.Pages
                 _driver = new ChromeDriver();
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
-                
+
             }
 
             [Test]
-            
+
 
             public void NavigateToContactPageAndFillTheForm()
             {
@@ -49,11 +48,11 @@ namespace Biopoolsengardens.Pages
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
 
-               // _contactPage.FillForm(_user);
+                // _contactPage.FillForm(_user);
 
-                 _contactPage.Submit.Click();
+                _contactPage.Submit.Click();
 
-          
+
             }
 
             [Test]
@@ -105,7 +104,7 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.FillForm(_user);
 
-               // _contactPage.Submit.Click();
+                // _contactPage.Submit.Click();
 
                 Assert.IsEmpty(_user.RealTelepfoneNumber);
 
@@ -160,7 +159,7 @@ namespace Biopoolsengardens.Pages
                     _driver.SwitchTo().Window(tabs[0]);
                 }
 
-                
+
                 Assert.IsTrue(_driver.FindElement(By.TagName("h1")).Displayed);
 
             }
@@ -183,7 +182,7 @@ namespace Biopoolsengardens.Pages
 
                 Assert.AreEqual(_contactPage.ErrorMessageForCommentBox.Text, "Dit veld is verplicht.");
                 Assert.IsTrue(_contactPage.ErrorMessageForCommentBox.Displayed);
-                
+
             }
 
             [TearDown]
