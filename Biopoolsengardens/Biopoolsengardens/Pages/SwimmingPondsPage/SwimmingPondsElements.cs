@@ -3,10 +3,10 @@ using OpenQA.Selenium;
 
 namespace Biopoolsengardens.Pages
 {
-    class SwimmingPondsMethod : BasePage
+    class SwimmingPondsElements : BasePage
     {
 
-        public SwimmingPondsMethod(IWebDriver driver)
+        public SwimmingPondsElements(IWebDriver driver)
             : base(driver)
         {
 
@@ -28,6 +28,8 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement Grid => Driver.FindElement(By.Id("element-141"));
 
+        public IWebElement VideoPlayer => Driver.FindElement(By.Id("element-651"));
+        public IWebElement LakeDataGrid => Driver.FindElement(By.Id("element-416"));
 
     }
 }

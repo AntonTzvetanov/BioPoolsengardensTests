@@ -3,9 +3,11 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Threading;
+
 
 namespace Biopoolsengardens.Pages
 {
@@ -16,20 +18,18 @@ namespace Biopoolsengardens.Pages
 
         private IWebDriver _driver;
 
-        private SwimmingPondsMethod _swimmingPonds;
+        private SwimmingPondsElements _swimmingPonds;
+      
 
         [SetUp]
 
         public void TestInitialize()
         {
-
-
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             _driver.Manage().Window.Maximize();
-
             _driver = new ChromeDriver();
-
-            _swimmingPonds = new SwimmingPondsMethod(_driver);
+            _swimmingPonds = new SwimmingPondsElements(_driver);
+  
         }
 
         [Test]
@@ -39,6 +39,7 @@ namespace Biopoolsengardens.Pages
         {
 
             _swimmingPonds.Navigate();
+            _swimmingPonds.Maximize();
             _swimmingPonds.CookieButton.Click();
 
             _swimmingPonds.Example.Click();
@@ -48,32 +49,80 @@ namespace Biopoolsengardens.Pages
             action.Release(_swimmingPonds.Grid).Perform();
 
             Thread.Sleep(2000);
-
+            Assert.That(_swimmingPonds.MoveUpArrowButton.Displayed, Is.True);
+            Assert.That(_swimmingPonds.MoveUpArrowButton.Enabled, Is.True);
             _swimmingPonds.MoveUpArrowButton.Click();
 
         }
 
+        [Test]
+        public void VerifyVideoPlayerIsDisplayed()
+        {
+            _swimmingPonds.Navigate();
+            _swimmingPonds.Maximize();
+            _swimmingPonds.CookieButton.Click();
+
+            _swimmingPonds.Example.Click();
+
+            Actions action = new Actions(_driver);
+            action.ClickAndHold(_swimmingPonds.Grid).Perform();
+            action.Release(_swimmingPonds.Grid).Perform();
+
+            _swimmingPonds.VideoPlayer.Click();
+            Assert.That(_swimmingPonds.VideoPlayer.Displayed);
+            Thread.Sleep(2000);
+            _swimmingPonds.VideoPlayer.Click();
+            
+        }
+
+        [Test]
+        public void VerifyLakeDataGridHeaderText()
+        {
+            _swimmingPonds.Navigate();
+            _swimmingPonds.Maximize();
+            _swimmingPonds.CookieButton.Click();
+            _swimmingPonds.Example.Click();
+            Actions action = new Actions(_driver);
+            action.ClickAndHold(_swimmingPonds.LakeDataGrid).Perform();
+            action.Release(_swimmingPonds.LakeDataGrid).Perform();
+            Assert.That(_swimmingPonds.LakeDataGrid.Displayed);
+            Assert.AreEqual(_swimmingPonds.LakeDataGrid.Text, "Voordelen Zwemvijver");
+        }
 
         [TearDown]
         public void TearDown()
         {
-            var name = TestContext.CurrentContext.Test.Name;
-            var result = TestContext.CurrentContext.Result.Outcome;
-
-            if (result != ResultState.Success)
+            try
             {
-                var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
-                var directory = Directory.GetCurrentDirectory();
+                if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+                {
+                    // Capture screenshot
+                    var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
 
-                var fullPath = Path.GetFullPath("..\\..\\..\\Screenshots");
+                    // Save screenshot to a file
+                    string screenshotPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Screenshots");
+                    Directory.CreateDirectory(screenshotPath);
 
-                screenshot.SaveAsFile(fullPath + name + ".png", ScreenshotImageFormat.Png);
+                    string screenshotFileName = $"{TestContext.CurrentContext.Test.Name}_{DateTime.Now:yyyyMMdd_HHmmss}.png";
+                    string screenshotFilePath = Path.Combine(screenshotPath, screenshotFileName);
 
+                    // Log the screenshot file path or perform any additional actions
+                    Console.WriteLine($"Screenshot saved: {screenshotFilePath}");
+                }
             }
-            _driver.Quit();
-
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in TearDown method: {ex.Message}");
+            }
+            finally
+            {
+                // Close the WebDriver instance
+                if (_driver != null)
+                {
+                    _driver.Close();
+                }
+            }
         }
-
     }
 
 }

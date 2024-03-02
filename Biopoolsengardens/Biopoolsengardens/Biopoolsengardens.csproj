@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.CodeCoverage" Version="17.8.0" />
     <PackageReference Include="Microsoft.NETCore.App" Version="2.1.30" />
     <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="17.8.0" />
