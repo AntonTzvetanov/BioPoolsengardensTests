@@ -130,7 +130,7 @@ namespace Biopoolsengardens.Pages
 
             [Test]
 
-            public void NavigateAndMakeAppointmentWithoutEmailAddress()
+            public void VerifyErrorMessageForMissingEmail()
             {
                 _apointment.Navigate();
 
@@ -165,18 +165,13 @@ namespace Biopoolsengardens.Pages
                 _apointment.CookieButton.Click();
 
                 _apointment.OfferButton.Click();
-
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_apointment.ShuttleElement).Perform();
-
                 _apointment.FillApointment(_makeApointment);
-
                 _makeApointment.UserName = "";
-
                 _makeApointment.CommenentBox = "";
-
+                _makeApointment.UserPhoneNumber = "12345";
                 _apointment.Options.Click();
-
                 _apointment.Subbmit.Click();
 
             }

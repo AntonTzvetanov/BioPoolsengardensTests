@@ -44,7 +44,6 @@ namespace Biopoolsengardens.Pages
             _swimmingPonds.MoveUpArrowButton.Click();
         }
 
-
         [TearDown]
         public void TearDown()
         {
