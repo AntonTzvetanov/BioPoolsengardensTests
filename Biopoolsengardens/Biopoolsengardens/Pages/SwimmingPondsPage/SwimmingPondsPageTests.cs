@@ -89,6 +89,24 @@ namespace Biopoolsengardens.Pages
             Assert.AreEqual(_swimmingPonds.LakeDataGrid.Text, "Voordelen Zwemvijver");
         }
 
+        [Test] 
+        public void VerifyFootherTextAndLinkToAppointmentPage()
+        {
+
+            _swimmingPonds.Navigate();
+            _swimmingPonds.Maximize();
+            _swimmingPonds.CookieButton.Click();
+            _swimmingPonds.Example.Click();
+            Actions action = new Actions(_driver);
+            action.ClickAndHold(_swimmingPonds.ShuttleFooter).Perform();
+            action.Release(_swimmingPonds.ShuttleFooter).Perform();
+            Assert.That( _swimmingPonds.AppointmentPageLink.Displayed);
+            Assert.AreEqual(_swimmingPonds.AppointmentPageLink.Text,  "Afspraak maken");
+            Assert.IsTrue(_swimmingPonds.AppointmentPageLink.Enabled);
+            _swimmingPonds.AppointmentPageLink.Click();
+            _driver.Navigate().Back();
+        }
+
         [TearDown]
         public void TearDown()
         {

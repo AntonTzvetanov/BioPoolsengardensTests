@@ -30,6 +30,8 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement VideoPlayer => Driver.FindElement(By.Id("element-651"));
         public IWebElement LakeDataGrid => Driver.FindElement(By.Id("element-416"));
+        public IWebElement ShuttleFooter => Driver.FindElement(By.Id("element-460"));
+        public IWebElement AppointmentPageLink => Driver.FindElement(By.Id("element-463"));
 
     }
 }
