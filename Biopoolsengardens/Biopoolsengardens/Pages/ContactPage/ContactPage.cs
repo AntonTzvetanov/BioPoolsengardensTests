@@ -30,6 +30,8 @@ namespace Biopoolsengardens.Pages
                 _driver = new ChromeDriver();
                 _user = ContactPageFill.FillUser();
                 _contactPage = new ContactePageMethod(_driver);
+                _contactPage.Navigate();
+                _contactPage.Maximize();
 
             }
 
@@ -38,20 +40,14 @@ namespace Biopoolsengardens.Pages
 
             public void NavigateToContactPageAndFillTheForm()
             {
-                _contactPage.Navigate();
-
                 _contactPage.CookieButton.Click();
-
                 _contactPage.ContactPageButton.Click();
-
-
                 Actions action = new Actions(_driver);
                 action.ClickAndHold(_contactPage.ShuttleElement).Perform();
 
-                // _contactPage.FillForm(_user);
+                _contactPage.FillForm(_user);
 
                 _contactPage.Submit.Click();
-
 
             }
 
@@ -60,9 +56,6 @@ namespace Biopoolsengardens.Pages
             public void FillFormWithoutEmailAddress()
             {
                 _contactPage.Navigate();
-
-                _contactPage.Maximize();
-
                 _contactPage.CookieButton.Click();
 
                 _contactPage.ContactPageButton.Click();

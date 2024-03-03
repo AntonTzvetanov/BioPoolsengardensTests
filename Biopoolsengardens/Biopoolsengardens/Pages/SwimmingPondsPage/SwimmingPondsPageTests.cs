@@ -25,11 +25,10 @@ namespace Biopoolsengardens.Pages
 
         public void TestInitialize()
         {
-            _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            _driver.Manage().Window.Maximize();
             _driver = new ChromeDriver();
             _swimmingPonds = new SwimmingPondsElements(_driver);
-  
+            _swimmingPonds.Navigate();
+            _swimmingPonds.Maximize();
         }
 
         [Test]
@@ -38,8 +37,6 @@ namespace Biopoolsengardens.Pages
         public void NavigateToSwimmingPondsPage()
         {
 
-            _swimmingPonds.Navigate();
-            _swimmingPonds.Maximize();
             _swimmingPonds.CookieButton.Click();
 
             _swimmingPonds.Example.Click();
@@ -58,8 +55,7 @@ namespace Biopoolsengardens.Pages
         [Test]
         public void VerifyVideoPlayerIsDisplayed()
         {
-            _swimmingPonds.Navigate();
-            _swimmingPonds.Maximize();
+            
             _swimmingPonds.CookieButton.Click();
 
             _swimmingPonds.Example.Click();
@@ -78,8 +74,7 @@ namespace Biopoolsengardens.Pages
         [Test]
         public void VerifyLakeDataGridHeaderText()
         {
-            _swimmingPonds.Navigate();
-            _swimmingPonds.Maximize();
+         
             _swimmingPonds.CookieButton.Click();
             _swimmingPonds.Example.Click();
             Actions action = new Actions(_driver);
@@ -93,8 +88,6 @@ namespace Biopoolsengardens.Pages
         public void VerifyFootherTextAndLinkToAppointmentPage()
         {
 
-            _swimmingPonds.Navigate();
-            _swimmingPonds.Maximize();
             _swimmingPonds.CookieButton.Click();
             _swimmingPonds.Example.Click();
             Actions action = new Actions(_driver);
