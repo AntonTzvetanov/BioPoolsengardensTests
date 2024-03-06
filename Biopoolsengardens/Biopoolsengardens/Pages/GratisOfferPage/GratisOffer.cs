@@ -60,9 +60,7 @@ namespace Biopoolsengardens.Pages
 
             public void TestFreeOfferWithoutFirstAndLastName()
             {
-                _offer.Navigate();
-
-                _offer.Maximize();
+           
 
                 _offer.CookieButton.Click();
 
@@ -74,7 +72,7 @@ namespace Biopoolsengardens.Pages
 
                 _offer.FillOfferForm(_fillOffer);
 
-                // _offer.SubbmitButton.Click();
+                _offer.SubbmitButton.Click();
 
 
 
@@ -87,9 +85,6 @@ namespace Biopoolsengardens.Pages
             public void TestWithoutTelephoneNumber()
             {
 
-                _offer.Navigate();
-
-                _offer.Maximize();
 
                 _offer.CookieButton.Click();
 
@@ -112,10 +107,6 @@ namespace Biopoolsengardens.Pages
 
             public void TestWithoutEmailAddress()
             {
-
-                _offer.Navigate();
-
-                _offer.Maximize();
 
                 _offer.CookieButton.Click();
 

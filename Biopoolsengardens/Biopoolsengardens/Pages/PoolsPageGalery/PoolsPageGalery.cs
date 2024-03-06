@@ -66,6 +66,29 @@ namespace Biopoolsengardens.BioPoolsPage
 
             }
 
+            [Test] 
+            public void SelectPictureAmdDownload()
+            {
+
+                _poolsGalery.CookieButton.Click();
+
+                _poolsGalery.PoolsButton.Click();
+                Assert.IsTrue(true, _poolsGalery.PoolsPageCenterPicture.Displayed.ToString(), Is.True);
+
+                Actions action = new Actions(_driver);
+                action.MoveToElement(_poolsGalery.SocialLinksGrid)
+                    .Release()
+                    .Perform();
+
+                action.ClickAndHold(_poolsGalery.SelectPictures)
+                    .Release()
+                    .Perform();
+                
+                _poolsGalery.InPictureShareButton.Click();
+                Thread.Sleep(1000);
+
+            }
+
             [TearDown]
             public void TearDown()
             {

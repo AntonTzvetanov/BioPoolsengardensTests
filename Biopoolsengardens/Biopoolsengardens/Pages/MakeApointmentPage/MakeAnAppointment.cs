@@ -173,7 +173,7 @@ namespace Biopoolsengardens.Pages
                 _makeApointment.UserPhoneNumber = "12345";
                 _apointment.Options.Click();
                 _apointment.Subbmit.Click();
-
+                Assert.Fail();
             }
 
             [TearDown]

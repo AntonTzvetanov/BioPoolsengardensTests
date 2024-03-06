@@ -5,7 +5,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.IO;
-using System.Reflection;
 using System.Threading;
 
 
@@ -19,7 +18,7 @@ namespace Biopoolsengardens.Pages
         private IWebDriver _driver;
 
         private SwimmingPondsElements _swimmingPonds;
-      
+
 
         [SetUp]
 
@@ -38,7 +37,6 @@ namespace Biopoolsengardens.Pages
         {
 
             _swimmingPonds.CookieButton.Click();
-
             _swimmingPonds.Example.Click();
 
             Actions action = new Actions(_driver);
@@ -55,7 +53,7 @@ namespace Biopoolsengardens.Pages
         [Test]
         public void VerifyVideoPlayerIsDisplayed()
         {
-            
+
             _swimmingPonds.CookieButton.Click();
 
             _swimmingPonds.Example.Click();
@@ -68,13 +66,13 @@ namespace Biopoolsengardens.Pages
             Assert.That(_swimmingPonds.VideoPlayer.Displayed);
             Thread.Sleep(2000);
             _swimmingPonds.VideoPlayer.Click();
-            
+
         }
 
         [Test]
         public void VerifyLakeDataGridHeaderText()
         {
-         
+
             _swimmingPonds.CookieButton.Click();
             _swimmingPonds.Example.Click();
             Actions action = new Actions(_driver);
@@ -84,7 +82,7 @@ namespace Biopoolsengardens.Pages
             Assert.AreEqual(_swimmingPonds.LakeDataGrid.Text, "Voordelen Zwemvijver");
         }
 
-        [Test] 
+        [Test]
         public void VerifyFootherTextAndLinkToAppointmentPage()
         {
 
@@ -93,8 +91,8 @@ namespace Biopoolsengardens.Pages
             Actions action = new Actions(_driver);
             action.ClickAndHold(_swimmingPonds.ShuttleFooter).Perform();
             action.Release(_swimmingPonds.ShuttleFooter).Perform();
-            Assert.That( _swimmingPonds.AppointmentPageLink.Displayed);
-            Assert.AreEqual(_swimmingPonds.AppointmentPageLink.Text,  "Afspraak maken");
+            Assert.That(_swimmingPonds.AppointmentPageLink.Displayed);
+            Assert.AreEqual(_swimmingPonds.AppointmentPageLink.Text, "Afspraak maken");
             Assert.IsTrue(_swimmingPonds.AppointmentPageLink.Enabled);
             _swimmingPonds.AppointmentPageLink.Click();
             _driver.Navigate().Back();
