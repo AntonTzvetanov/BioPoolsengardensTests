@@ -23,8 +23,6 @@ namespace Biopoolsengardens
 
         }
 
-
-
         public IWebDriver Driver => _driver;
 
         public WebDriverWait Wait => _wait;

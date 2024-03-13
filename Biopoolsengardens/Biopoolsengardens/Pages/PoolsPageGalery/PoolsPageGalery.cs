@@ -4,7 +4,6 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using System;
 using System.IO;
 using System.Net;
@@ -23,10 +22,7 @@ namespace Biopoolsengardens.BioPoolsPage
 
             private PoolsPageGaleryElements _poolsGalery;
             private string downloadDirectory;
-            private string imageUrl;
-            private object ExpectedConditions;
-            private object imageElement;
-
+        
             [SetUp]
 
             public void SetUp()
@@ -72,13 +68,11 @@ namespace Biopoolsengardens.BioPoolsPage
                 }
                 _poolsGalery.CloseButton.Click();
                 _poolsGalery.MoveUpArrowButton.Click();
-
             }
 
             [Test] 
             public void SelectPictureAndDownload()
             {
-
                 _poolsGalery.CookieButton.Click();
                 _poolsGalery.PoolsButton.Click();
                 Assert.IsTrue(true, _poolsGalery.PoolsPageCenterPicture.Displayed.ToString(), Is.True);
@@ -89,7 +83,7 @@ namespace Biopoolsengardens.BioPoolsPage
                 
                 _poolsGalery.InPictureShareButton.Click();
                 Thread.Sleep(1000);
-
+                //to fix this shit 
                 _poolsGalery.DownloadImage.Click();
                 var tabs = _driver.WindowHandles;
 
@@ -98,7 +92,7 @@ namespace Biopoolsengardens.BioPoolsPage
                     _driver.SwitchTo().Window(tabs[1]);
                 }
 
-                var imageUrl = _poolsGalery.DownloadImage.GetAttribute("https://shuttle-storage.s3.amazonaws.com/biopoolsgardens/P8%20Zwembaden/NIVEKO_2015_00003.jpg?1485419876&w=1100&h=732");
+                var imageUrl = _driver.Url;
                 WebClient client = new WebClient();
 
                 if (!string.IsNullOrEmpty(imageUrl))
@@ -120,11 +114,16 @@ namespace Biopoolsengardens.BioPoolsPage
             }
 
             [TearDown]
-            public void TearDown()
+            [Obsolete]
+            public void TeardownTest()
             {
                 try
                 {
-                    if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+                    // Check if the test has failed
+                    var status = TestContext.CurrentContext.Result.Outcome.Status;
+                    var message = TestContext.CurrentContext.Result.Message;
+
+                    if (status == TestStatus.Failed)
                     {
                         // Capture screenshot
                         var screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
@@ -136,23 +135,62 @@ namespace Biopoolsengardens.BioPoolsPage
                         string screenshotFileName = $"{TestContext.CurrentContext.Test.Name}_{DateTime.Now:yyyyMMdd_HHmmss}.png";
                         string screenshotFilePath = Path.Combine(screenshotPath, screenshotFileName);
 
+                        // Save the screenshot
+                        screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
+
                         // Log the screenshot file path or perform any additional actions
                         Console.WriteLine($"Screenshot saved: {screenshotFilePath}");
                     }
+
+                    // Get the solution directory
+                    string solutionDirectory = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory));
+
+                    // Specify the folder path within the solution to save the reports
+                    string reportsFolder = Path.Combine(solutionDirectory, "TestReports");
+
+                    // Create the folder if it doesn't exist
+                    if (!Directory.Exists(reportsFolder))
+                    {
+                        Directory.CreateDirectory(reportsFolder);
+                    }
+
+                    // Generate XML report
+                    string fileName = Path.Combine(reportsFolder, $"FailedTest_{TestContext.CurrentContext.Test.Name}.xml");
+                    var xmlDoc = new System.Xml.XmlDocument();
+
+                    // Create the root element
+                    var root = xmlDoc.CreateElement("TestResult");
+                    xmlDoc.AppendChild(root);
+
+                    // Add test details
+                    var testNameElement = xmlDoc.CreateElement("TestName");
+                    testNameElement.InnerText = TestContext.CurrentContext.Test.FullName;
+                    root.AppendChild(testNameElement);
+
+                    var errorMessageElement = xmlDoc.CreateElement("ErrorMessage");
+                    errorMessageElement.InnerText = message;
+                    root.AppendChild(errorMessageElement);
+
+                    // Save the XML file
+                    xmlDoc.Save(fileName);
+
+                    // Visualize the XML report (open in default XML viewer)
+                    System.Diagnostics.Process.Start(fileName);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error in TearDown method: {ex.Message}");
+                    Console.WriteLine($"Error in TeardownTest method: {ex.Message}");
                 }
                 finally
                 {
                     // Close the WebDriver instance
                     if (_driver != null)
                     {
-                        _driver.Close();
+                        _driver.Quit();
                     }
                 }
             }
+
 
         }
 
