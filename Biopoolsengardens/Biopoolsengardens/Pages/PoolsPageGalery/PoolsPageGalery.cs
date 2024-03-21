@@ -83,7 +83,7 @@ namespace Biopoolsengardens.BioPoolsPage
                 
                 _poolsGalery.InPictureShareButton.Click();
                 Thread.Sleep(1000);
-                //to fix this shit 
+                
                 _poolsGalery.DownloadImage.Click();
                 var tabs = _driver.WindowHandles;
 
