@@ -38,5 +38,7 @@ namespace Biopoolsengardens.Pages.PoolsPageGalery
         public IWebElement DownloadImage => Driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div[2]/div[2]/div/a[4]"));
         public IWebElement PictureForDownload => Driver.FindElement(By.XPath("/html/body/img"));
 
+  
+
     }
 }
