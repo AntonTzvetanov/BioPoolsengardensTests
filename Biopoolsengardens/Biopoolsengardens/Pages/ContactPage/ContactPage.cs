@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
+using System.Data;
 using System.IO;
 using System.Threading;
 
@@ -47,7 +48,7 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.FillForm(_user);
 
-                _contactPage.Submit.Click();
+               // _contactPage.Submit.Click();
 
             }
 
@@ -97,9 +98,10 @@ namespace Biopoolsengardens.Pages
 
                 _contactPage.FillForm(_user);
 
-                // _contactPage.Submit.Click();
+                //contactPage.Submit.Click();
 
                 Assert.IsEmpty(_user.RealTelepfoneNumber);
+                Assert.IsFalse(false.Equals(_user.RealTelepfoneNumber.Length)); 
 
             }
 
@@ -151,7 +153,7 @@ namespace Biopoolsengardens.Pages
                     _driver.Close();
                     _driver.SwitchTo().Window(tabs[0]);
                 }
-
+               
 
                 Assert.IsTrue(_driver.FindElement(By.TagName("h1")).Displayed);
 
