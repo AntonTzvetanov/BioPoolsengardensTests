@@ -38,5 +38,7 @@ namespace Biopoolsengardens.Pages
 
         public IWebElement Subbmit => Wait.Until((e) => e.FindElement(By.ClassName("Form--vertical")));
 
+        public IWebElement ErrorMessageField => Driver.FindElement(By.Id("parsley-id-5")); 
+
     }
 }

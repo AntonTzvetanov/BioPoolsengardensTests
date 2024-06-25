@@ -173,7 +173,8 @@ namespace Biopoolsengardens.Pages
                 _makeApointment.UserPhoneNumber = "12345";
                 _apointment.Options.Click();
                 _apointment.Subbmit.Click();
-                Assert.Fail();
+                // need to find the correct web element to be properly displayed the error message
+                Assert.That(_apointment.ErrorMessageField.Displayed); 
             }
 
             [TearDown]
